@@ -280,7 +280,7 @@ body {
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, #f97316 0%, #ea6b0e 100%);
   color: #fff;
   padding: 14px 28px;
   border-radius: var(--radius-pill);
@@ -292,12 +292,13 @@ body {
   align-items: center;
   gap: 8px;
   white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.25);
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.35);
+  box-shadow: 0 8px 32px rgba(249, 115, 22, 0.45);
 }
 
 .btn-ghost {
@@ -519,6 +520,12 @@ body {
   justify-content: center;
   margin-bottom: 24px;
   font-size: 24px;
+  color: var(--accent);
+}
+
+.problem-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .problem-card h3 {
@@ -596,6 +603,12 @@ body {
   margin-bottom: 24px;
   font-size: 26px;
   border: 1px solid var(--border);
+  color: var(--accent);
+}
+
+.bento-icon svg {
+  width: 26px;
+  height: 26px;
 }
 
 .bento-card h3 {
@@ -774,8 +787,18 @@ body {
 }
 
 .prozess-icon {
-  font-size: 28px;
   margin-bottom: 16px;
+  color: var(--accent);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prozess-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .prozess-step h3 {
@@ -949,9 +972,22 @@ body {
 }
 
 .usecase-icon {
-  font-size: 28px;
+  width: 44px;
+  height: 44px;
+  background: var(--accent-dim);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 16px;
-  display: block;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.usecase-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 .usecase-card h4 {
@@ -1017,9 +1053,21 @@ body {
 }
 
 .branche-icon {
-  font-size: 36px;
-  margin-bottom: 16px;
-  display: block;
+  width: 48px;
+  height: 48px;
+  background: var(--accent-dim);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--accent);
+}
+
+.branche-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .branche-card h4 {
@@ -1397,6 +1445,68 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* =========================================
+   SECTION GRADIENT SEPARATORS
+   ========================================= */
+
+/* Replace flat borders with orange glow separator lines */
+.features-section,
+.prozess-section,
+.testimonials-section,
+.final-cta-section,
+.usecases-section,
+.video-section,
+.stats-section,
+.branchen-section,
+.faq-section,
+.trust-bar-section {
+  border-top: none !important;
+  position: relative;
+}
+
+.features-section::before,
+.prozess-section::before,
+.testimonials-section::before,
+.final-cta-section::before,
+.usecases-section::before,
+.video-section::before,
+.stats-section::before,
+.branchen-section::before,
+.faq-section::before,
+.trust-bar-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(249, 115, 22, 0.35) 30%,
+    rgba(249, 115, 22, 0.6) 50%,
+    rgba(249, 115, 22, 0.35) 70%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+/* Subtle top gradient fade for dark-on-dark sections */
+.features-section::after,
+.prozess-section::after,
+.testimonials-section::after,
+.final-cta-section::after,
+.usecases-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(249, 115, 22, 0.03) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* =========================================
