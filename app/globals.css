@@ -1624,3 +1624,543 @@ body {
   transition: opacity 0.2s;
 }
 .cookie-btn-primary:hover { opacity: 0.85; }
+
+/* =========================================
+   NOISE TEXTURE OVERLAY
+   ========================================= */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.35;
+}
+
+/* =========================================
+   DOT GRID BACKGROUND
+   ========================================= */
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
+}
+
+/* =========================================
+   AMBIENT FLOATING ORBS
+   ========================================= */
+
+.ambient-orbs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+}
+
+.orb-1 {
+  width: 700px;
+  height: 700px;
+  top: -8%;
+  left: 15%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.10) 0%, transparent 70%);
+  animation: orbFloat1 22s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 500px;
+  height: 500px;
+  top: 45%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.07) 0%, transparent 70%);
+  animation: orbFloat2 28s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 600px;
+  height: 600px;
+  bottom: -5%;
+  left: 38%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.06) 0%, transparent 70%);
+  animation: orbFloat3 35s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(50px, 30px); }
+  66% { transform: translate(-20px, 50px); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-40px, -30px); }
+  66% { transform: translate(20px, -50px); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -25px); }
+}
+
+/* =========================================
+   BTN-PRIMARY SHIMMER SWEEP
+   ========================================= */
+
+.btn-primary {
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    70deg,
+    transparent 10%,
+    rgba(255, 255, 255, 0.15) 30%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.15) 70%,
+    transparent 90%
+  );
+  animation: btnSweep 5s linear infinite;
+}
+
+@keyframes btnSweep {
+  0% { left: -100%; }
+  40% { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* =========================================
+   GENERAL ANIMATION KEYFRAMES
+   ========================================= */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.45), 0 0 80px rgba(249, 115, 22, 0.15); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer-move {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* =========================================
+   BENTO CARD VISUALS
+   ========================================= */
+
+.card-visual {
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(249, 115, 22, 0.1);
+  border-radius: 10px;
+  padding: 18px;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ki-strategy-visual {
+  padding: 14px 10px !important;
+}
+
+/* --- KI Roadmap visual (Strategie card) --- */
+.ki-roadmap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.ki-rm-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(249, 115, 22, 0.08);
+  transform: translateY(-50%);
+  overflow: hidden;
+  z-index: 0;
+}
+
+.ki-rm-progress {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), rgba(249, 115, 22, 0.2));
+  animation: kiProgress 5s ease-in-out infinite;
+}
+
+@keyframes kiProgress {
+  0%   { width: 0%; opacity: 1; }
+  70%  { width: 100%; opacity: 1; }
+  88%  { width: 100%; opacity: 0; }
+  100% { width: 0%; opacity: 0; }
+}
+
+.ki-rm-phase {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  z-index: 1;
+  opacity: 0.3;
+  transform: translateY(4px);
+  animation: kiPhaseIn 5s ease-in-out infinite;
+}
+.ki-rm-p1 { animation-delay: 0s; }
+.ki-rm-p2 { animation-delay: 1s; }
+.ki-rm-p3 { animation-delay: 2s; }
+.ki-rm-p4 { animation-delay: 3s; }
+
+@keyframes kiPhaseIn {
+  0%   { opacity: 0.3; transform: translateY(4px); }
+  15%  { opacity: 1;   transform: translateY(0); }
+  40%  { opacity: 1;   transform: translateY(0); }
+  65%  { opacity: 0.3; transform: translateY(4px); }
+  100% { opacity: 0.3; transform: translateY(4px); }
+}
+
+.ki-rm-node {
+  width: 34px;
+  height: 34px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ki-rm-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  animation: kiRingPulse 5s ease-in-out infinite;
+}
+.ki-rm-p1 .ki-rm-ring { animation-delay: 0s; }
+.ki-rm-p2 .ki-rm-ring { animation-delay: 1s; }
+.ki-rm-p3 .ki-rm-ring { animation-delay: 2s; }
+.ki-rm-p4 .ki-rm-ring { animation-delay: 3s; }
+
+@keyframes kiRingPulse {
+  0%   { transform: scale(1);   opacity: 0; }
+  15%  { transform: scale(1);   opacity: 0.7; }
+  30%  { transform: scale(1.5); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.ki-rm-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.08);
+  border: 1.5px solid rgba(249, 115, 22, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.ki-rm-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.ki-rm-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.ki-rm-title {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ki-rm-desc {
+  font-size: 0.52rem;
+  color: var(--text-gray);
+  letter-spacing: 0.02em;
+}
+
+.ki-rm-connector {
+  flex: 0 0 auto;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+  height: 34px;
+}
+
+/* --- Auto Pipeline visual (Prozessautomatisierung card) --- */
+.auto-pipeline {
+  flex-direction: column !important;
+  align-items: stretch !important;
+  padding: 10px 12px !important;
+  min-height: 0 !important;
+  gap: 0 !important;
+}
+
+.auto-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  background: rgba(249, 115, 22, 0.04);
+  border: 1px solid rgba(249, 115, 22, 0.1);
+  animation: autoStepPulse 4s ease-in-out infinite;
+}
+.auto-s1 { animation-delay: 0s; }
+.auto-s2 { animation-delay: 1s; }
+.auto-s3 { animation-delay: 2s; }
+.auto-s4 { animation-delay: 3s; }
+
+@keyframes autoStepPulse {
+  0%, 100% { border-color: rgba(249,115,22,0.1); background: rgba(249,115,22,0.03); }
+  25% { border-color: rgba(249,115,22,0.4); background: rgba(249,115,22,0.08); box-shadow: 0 0 12px rgba(249,115,22,0.08); }
+}
+
+.auto-step-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.auto-step-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.auto-step-label {
+  font-size: 0.65rem;
+  color: var(--text-gray);
+  letter-spacing: 0.03em;
+  flex: 1;
+}
+
+.auto-step-bar {
+  width: 44px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(249, 115, 22, 0.1);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.auto-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--accent);
+  animation: autoBarFill 3s ease-in-out infinite;
+}
+
+@keyframes autoBarFill {
+  0%   { width: 0%; }
+  40%  { width: 100%; }
+  60%  { width: 100%; }
+  100% { width: 0%; }
+}
+
+.auto-connector {
+  display: flex;
+  justify-content: center;
+  height: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auto-connector::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: rgba(249, 115, 22, 0.2);
+}
+
+.auto-particle {
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.7;
+  position: relative;
+  z-index: 1;
+  animation: autoParticleDown 1.2s linear infinite;
+}
+
+@keyframes autoParticleDown {
+  0%   { transform: translateY(-8px); opacity: 0; }
+  30%  { opacity: 0.8; }
+  100% { transform: translateY(16px); opacity: 0; }
+}
+
+.auto-connector:nth-child(2) .auto-particle { animation-delay: 0.4s; }
+.auto-connector:nth-child(4) .auto-particle { animation-delay: 0.8s; }
+.auto-connector:nth-child(6) .auto-particle { animation-delay: 1.2s; }
+
+/* --- Chart Bars visual (Datenanalyse card) --- */
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 90px;
+  width: 100%;
+  padding: 0 8px;
+}
+
+.chart-bar {
+  flex: 1;
+  background: linear-gradient(180deg, rgba(249,115,22,0.25) 0%, rgba(249,115,22,0.08) 100%);
+  border-radius: 4px 4px 0 0;
+  transition: background 0.3s ease;
+  position: relative;
+  animation: barPulse 3s ease-in-out infinite;
+}
+
+.chart-bar:nth-child(1) { animation-delay: 0s; }
+.chart-bar:nth-child(2) { animation-delay: 0.15s; }
+.chart-bar:nth-child(3) { animation-delay: 0.3s; }
+.chart-bar:nth-child(4) { animation-delay: 0.45s; }
+.chart-bar:nth-child(5) { animation-delay: 0.6s; }
+.chart-bar:nth-child(6) { animation-delay: 0.75s; }
+.chart-bar:nth-child(7) { animation-delay: 0.9s; }
+
+@keyframes barPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.chart-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+/* --- Pulse dot for live indicators --- */
+.live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   HERO GLOW ENHANCEMENT
+   ========================================= */
+
+.hero-section {
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 20%,
+    rgba(249, 115, 22, 0.07) 0%,
+    transparent 70%
+  );
+}
+
+/* =========================================
+   SECTION BACKGROUND ENHANCEMENTS
+   ========================================= */
+
+.final-cta-section {
+  background: radial-gradient(
+    ellipse 80% 70% at 50% 50%,
+    rgba(249, 115, 22, 0.08) 0%,
+    var(--bg-card) 60%
+  );
+}
+
+/* Stat section radial glow upgrade */
+.stats-section {
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    rgba(249, 115, 22, 0.05) 0%,
+    var(--bg-primary) 70%
+  );
+}
+
+/* =========================================
+   NAV ENHANCED
+   ========================================= */
+
+.nav-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    70deg,
+    transparent 10%,
+    rgba(255,255,255,0.15) 50%,
+    transparent 90%
+  );
+  animation: btnSweep 6s linear infinite;
+  animation-delay: 2s;
+}

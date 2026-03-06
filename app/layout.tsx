@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import CookieNotice from "@/components/CookieNotice";
+import AmbientOrbs from "@/components/AmbientOrbs";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className={`${inter.variable} ${bebasNeue.variable}`}>
+        <AmbientOrbs />
         {children}
         <CookieNotice />
         <script
