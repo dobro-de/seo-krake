@@ -2080,3 +2080,291 @@ body {
 }
 
 /* Nav shimmer removed */
+
+/* ===== BRANCHEN PAGES ===== */
+
+.branche-hero {
+  padding: 9rem 0 5rem;
+  text-align: center;
+}
+
+.branche-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+}
+.branche-breadcrumb a {
+  color: var(--text-gray);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.branche-breadcrumb a:hover { color: var(--accent); }
+
+.branche-title {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-white);
+  margin-bottom: 1.25rem;
+  line-height: 1.05;
+}
+.branche-title .text-accent { color: var(--accent); }
+
+.branche-subtitle {
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  color: var(--text-gray);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.branche-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.75rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-accent:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.btn-accent-lg { padding: 1.05rem 2.2rem; font-size: 1rem; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.75rem;
+  border: 1px solid rgba(249,115,22,0.35);
+  color: var(--text-white);
+  font-size: 0.9rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.branche-section {
+  padding: 5rem 0;
+}
+
+.branche-section-head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.branche-challenges-bg {
+  background: var(--bg-card);
+}
+
+.branche-challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.branche-challenge-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  transition: border-color 0.2s;
+}
+.branche-challenge-card:hover { border-color: var(--border); }
+.branche-num {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.06em;
+}
+.branche-challenge-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 0.5rem;
+}
+.branche-challenge-card p {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  line-height: 1.65;
+}
+
+/* Solutions */
+.branche-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.branche-solution-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.branche-solution-card:hover {
+  border-color: var(--border);
+  transform: translateY(-2px);
+}
+
+.branche-sol-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--accent);
+}
+.branche-sol-icon svg { width: 100%; height: 100%; }
+
+.branche-sol-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-white);
+}
+.branche-sol-desc {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  line-height: 1.65;
+  flex: 1;
+}
+.branche-sol-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.branche-sol-val {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.branche-sol-lbl {
+  font-size: 0.75rem;
+  color: var(--text-gray);
+}
+
+/* CTA */
+.branche-cta-section {
+  padding: 5rem 0;
+  background: var(--bg-card);
+}
+.branche-cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+.branche-cta-inner p {
+  color: var(--text-gray);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* More pills */
+.branche-more-label {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-gray);
+  margin-bottom: 1.25rem;
+}
+.branche-more-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.branche-pill {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--text-gray);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.branche-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Overview page */
+.branche-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.branche-overview-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.branche-overview-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.branche-overview-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--accent);
+}
+.branche-overview-icon svg { width: 100%; height: 100%; }
+.branche-overview-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-white);
+}
+.branche-overview-card p {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  flex: 1;
+}
+.branche-overview-cta {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Branchen-Karten auf Homepage jetzt als Links */
+.branche-card {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .branche-hero { padding: 7rem 0 3.5rem; }
+  .branche-challenges-grid { grid-template-columns: 1fr; }
+  .branche-solutions-grid { grid-template-columns: 1fr; }
+  .branche-actions { flex-direction: column; }
+  .branche-overview-grid { grid-template-columns: 1fr; }
+}

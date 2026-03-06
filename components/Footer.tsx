@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { BRANCHEN } from "@/lib/branchen";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -28,14 +31,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Unternehmen */}
+          {/* Branchen */}
           <div className="footer-col">
-            <h4>Unternehmen</h4>
+            <h4><Link href="/branchen" style={{ color: "inherit", textDecoration: "none" }}>Branchen</Link></h4>
             <ul>
-              <li><a href="#problem">Über uns</a></li>
-              <li><a href="#prozess">Unser Prozess</a></li>
-              <li><a href="#referenzen">Referenzen</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              {BRANCHEN.map((b) => (
+                <li key={b.slug}>
+                  <Link href={`/${b.slug}`}>{b.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
