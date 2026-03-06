@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BRANCHEN } from "@/lib/branchen";
+import { LOESUNGEN } from "@/lib/loesungen";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -7,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="footer" role="contentinfo">
       <div className="footer-inner">
-        <div className="footer-top">
+        <div className="footer-top footer-top-5col">
           {/* Brand */}
           <div>
             <div className="footer-brand">
@@ -19,15 +20,15 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Leistungen */}
+          {/* Lösungen */}
           <div className="footer-col">
-            <h4>Leistungen</h4>
+            <h4><Link href="/loesungen" style={{ color: "inherit", textDecoration: "none" }}>Lösungen</Link></h4>
             <ul>
-              <li><a href="#leistungen">KI-Strategie</a></li>
-              <li><a href="#leistungen">Prozessautomatisierung</a></li>
-              <li><a href="#leistungen">KI-Integration</a></li>
-              <li><a href="#leistungen">Chatbots & Agents</a></li>
-              <li><a href="#leistungen">KI-Schulungen</a></li>
+              {LOESUNGEN.map((l) => (
+                <li key={l.slug}>
+                  <Link href={`/${l.slug}`}>{l.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -43,6 +44,17 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Unternehmen */}
+          <div className="footer-col">
+            <h4>Unternehmen</h4>
+            <ul>
+              <li><a href="#problem">Über uns</a></li>
+              <li><a href="#prozess">Unser Prozess</a></li>
+              <li><a href="#referenzen">Referenzen</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+
           {/* Kontakt */}
           <div className="footer-col">
             <h4>Kontakt</h4>
@@ -54,7 +66,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="footer-bottom">
           <p className="footer-copy">
             &copy; {year} KI Beratung. Alle Rechte vorbehalten.

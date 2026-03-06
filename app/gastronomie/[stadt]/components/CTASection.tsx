@@ -42,10 +42,10 @@ export default function CTASection({ city }: Props) {
           }}
         >
           {[
-            "✅ Kostenlose 45-minütige Erstberatung",
-            "✅ Individuelle KI-Potenzialanalyse für Ihren Betrieb",
-            "✅ Konkreter Umsetzungsplan mit ROI-Schätzung",
-            "✅ Keine versteckten Kosten, kein Verkaufsgespräch",
+            "Kostenlose 45-minütige Erstberatung",
+            "Individuelle KI-Potenzialanalyse für Ihren Betrieb",
+            "Konkreter Umsetzungsplan mit ROI-Schätzung",
+            "Keine versteckten Kosten, kein Verkaufsgespräch",
           ].map((item, i) => (
             <div
               key={i}
@@ -53,8 +53,12 @@ export default function CTASection({ city }: Props) {
                 fontSize: "15px",
                 color: "var(--text-gray)",
                 lineHeight: 1.5,
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
               }}
             >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="M20 6 9 17l-5-5"/></svg>
               {item}
             </div>
           ))}

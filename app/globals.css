@@ -2459,3 +2459,59 @@ body {
   .gastro-cities-grid { grid-template-columns: repeat(2, 1fr); }
   .branche-hero-icon { width: 60px; height: 60px; }
 }
+
+/* ── 5-COL FOOTER ── */
+.footer-top-5col {
+  grid-template-columns: 1.4fr 1fr 1fr 0.8fr 0.8fr !important;
+}
+
+/* ── LÖSUNGEN USE-CASE GRID ── */
+.loesung-usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.loesung-usecase-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+.loesung-usecase-card:hover { border-color: var(--border); }
+.loesung-usecase-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.loesung-usecase-branche {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.3rem;
+}
+.loesung-usecase-example {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  line-height: 1.55;
+}
+
+@media (max-width: 1024px) {
+  .footer-top-5col {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+}
+@media (max-width: 640px) {
+  .footer-top-5col {
+    grid-template-columns: 1fr !important;
+  }
+  .loesung-usecase-grid { grid-template-columns: 1fr; }
+}
