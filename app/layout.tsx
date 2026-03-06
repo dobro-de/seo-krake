@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
+import CookieNotice from "@/components/CookieNotice";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,6 +44,35 @@ export default function RootLayout({
     <html lang="de">
       <body className={`${inter.variable} ${bebasNeue.variable}`}>
         {children}
+        <CookieNotice />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "KI Beratung",
+              "description": "Professionelle KI Beratung für Unternehmen. Strategie, Implementierung und Prozessautomatisierung.",
+              "url": "https://kiberatung-v2.vercel.app",
+              "areaServed": "DE",
+              "knowsAbout": ["Künstliche Intelligenz", "KI Beratung", "Prozessautomatisierung", "KI-Strategie"],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                { "@type": "Question", "name": "Was kostet eine KI-Beratung?", "acceptedAnswer": { "@type": "Answer", "text": "Die Kosten einer KI-Beratung variieren je nach Projektumfang. Ein erstes Analysegespräch ist kostenlos und unverbindlich." } },
+                { "@type": "Question", "name": "Wie lange dauert ein KI-Beratungsprojekt?", "acceptedAnswer": { "@type": "Answer", "text": "Die Analysephase dauert 2 Wochen, die Strategieentwicklung 1 Woche. Die Umsetzung beginnt ab 4 Wochen, je nach Komplexität." } },
+                { "@type": "Question", "name": "Brauche ich IT-Kenntnisse für KI-Projekte?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Wir begleiten Sie von Anfang an und erklären alle Schritte verständlich — ohne technischen Hintergrund." } },
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );
