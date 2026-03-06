@@ -3,6 +3,7 @@ import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import CookieNotice from "@/components/CookieNotice";
 import AmbientOrbs from "@/components/AmbientOrbs";
+import AnimatedGrid from "@/components/AnimatedGrid";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -44,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className={`${inter.variable} ${bebasNeue.variable}`}>
+        <AnimatedGrid />
         <AmbientOrbs />
         {children}
         <CookieNotice />

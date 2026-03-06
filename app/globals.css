@@ -1625,37 +1625,7 @@ body {
 }
 .cookie-btn-primary:hover { opacity: 0.85; }
 
-/* =========================================
-   NOISE TEXTURE OVERLAY
-   ========================================= */
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0.35;
-}
-
-/* =========================================
-   DOT GRID BACKGROUND
-   ========================================= */
-
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(249, 115, 22, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(249, 115, 22, 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-  pointer-events: none;
-  z-index: 0;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
-}
+/* Noise and dot-grid removed — replaced by AnimatedGrid canvas component */
 
 /* =========================================
    AMBIENT FLOATING ORBS
@@ -1665,7 +1635,7 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
 }
 
@@ -1720,37 +1690,7 @@ body::after {
   50% { transform: translate(30px, -25px); }
 }
 
-/* =========================================
-   BTN-PRIMARY SHIMMER SWEEP
-   ========================================= */
-
-.btn-primary {
-  overflow: hidden;
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    70deg,
-    transparent 10%,
-    rgba(255, 255, 255, 0.15) 30%,
-    rgba(255, 255, 255, 0.25) 50%,
-    rgba(255, 255, 255, 0.15) 70%,
-    transparent 90%
-  );
-  animation: btnSweep 5s linear infinite;
-}
-
-@keyframes btnSweep {
-  0% { left: -100%; }
-  40% { left: 150%; }
-  100% { left: 150%; }
-}
+/* Shimmer removed per feedback */
 
 /* =========================================
    GENERAL ANIMATION KEYFRAMES
@@ -2139,28 +2079,4 @@ body::after {
   );
 }
 
-/* =========================================
-   NAV ENHANCED
-   ========================================= */
-
-.nav-cta {
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-cta::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    70deg,
-    transparent 10%,
-    rgba(255,255,255,0.15) 50%,
-    transparent 90%
-  );
-  animation: btnSweep 6s linear infinite;
-  animation-delay: 2s;
-}
+/* Nav shimmer removed */
