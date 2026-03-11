@@ -11,7 +11,7 @@ interface Props {
 }
 
 // "gastronomie" hat eine eigene dedizierte Page unter app/gastronomie/page.tsx
-const DEDICATED_PAGES = ["gastronomie"];
+const DEDICATED_PAGES = ["gastronomie", "handwerk"];
 
 export function generateStaticParams() {
   const branchenSlugs = getAllBranchenSlugs()
