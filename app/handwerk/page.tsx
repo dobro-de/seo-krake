@@ -114,6 +114,125 @@ export default function HandwerkPage() {
           </div>
         </section>
 
+        {/* ── TYPISCHE PROBLEME IN ZAHLEN ── */}
+        <section className="branche-section branche-challenges-bg">
+          <div className="container">
+            <div className="branche-section-head">
+              <span className="section-eyebrow">Fakten & Zahlen</span>
+              <h2 className="section-heading section-heading-center">Typische Probleme in Zahlen</h2>
+              <p className="section-sub section-sub-center" style={{ maxWidth: 560, margin: "0.75rem auto 0" }}>
+                Was die Zahlen über den Alltag im Handwerk sagen — und warum KI hier den Unterschied macht.
+              </p>
+            </div>
+            <div className="branche-challenges-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
+              <div className="branche-challenge-card" style={{ borderTop: "3px solid var(--accent)" }}>
+                <span className="branche-hero-stat-val" style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", display: "block", marginBottom: "0.5rem" }}>63 %</span>
+                <h3 style={{ marginBottom: "0.5rem" }}>Anfragen außerhalb der Öffnungszeiten</h3>
+                <p style={{ marginBottom: "0.75rem" }}>Über die Hälfte aller Kundenanfragen gehen außerhalb Ihrer Geschäftszeiten ein — und bleiben ohne KI unbeantwortet.</p>
+                <cite style={{ fontSize: "0.75rem", color: "var(--text-gray)", fontStyle: "normal" }}>Quelle: Bitkom 2023</cite>
+              </div>
+              <div className="branche-challenge-card" style={{ borderTop: "3px solid var(--accent)" }}>
+                <span className="branche-hero-stat-val" style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", display: "block", marginBottom: "0.5rem" }}>3,5 h</span>
+                <h3 style={{ marginBottom: "0.5rem" }}>Verlust pro Woche durch Telefonbearbeitung</h3>
+                <p style={{ marginBottom: "0.75rem" }}>Handwerksbetriebe verlieren im Schnitt 3,5 Stunden pro Woche allein durch das Entgegennehmen, Weiterleiten und Nachbearbeiten von Telefonanrufen.</p>
+                <cite style={{ fontSize: "0.75rem", color: "var(--text-gray)", fontStyle: "normal" }}>Schätzung auf Basis branchenüblicher Benchmarks</cite>
+              </div>
+              <div className="branche-challenge-card" style={{ borderTop: "3px solid var(--accent)" }}>
+                <span className="branche-hero-stat-val" style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", display: "block", marginBottom: "0.5rem" }}>50.000+</span>
+                <h3 style={{ marginBottom: "0.5rem" }}>Betriebe betroffen durch BFSG ab 2025</h3>
+                <p style={{ marginBottom: "0.75rem" }}>Das Barrierefreiheitsstärkungsgesetz (BFSG) tritt ab Juni 2025 in Kraft. Bis zu 50.000 Handwerksbetriebe müssen ihre digitalen Kanäle anpassen.</p>
+                <cite style={{ fontSize: "0.75rem", color: "var(--text-gray)", fontStyle: "normal" }}>Quelle: BFSG (Barrierefreiheitsstärkungsgesetz)</cite>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── ARBEITSALLTAG OHNE / MIT KI ── */}
+        <section className="branche-section">
+          <div className="container">
+            <div className="branche-section-head">
+              <span className="section-eyebrow">Vorher / Nachher</span>
+              <h2 className="section-heading section-heading-center">Typischer Arbeitsalltag — ohne und mit KI</h2>
+              <p className="section-sub section-sub-center" style={{ maxWidth: 540, margin: "0.75rem auto 0" }}>
+                So verändert sich der Alltag in Ihrem Betrieb, wenn KI die Routineaufgaben übernimmt.
+              </p>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", maxWidth: 860, margin: "0 auto" }} className="handwerk-comparison-grid">
+              {/* Ohne KI */}
+              <div style={{
+                background: "rgba(239, 68, 68, 0.05)",
+                border: "1px solid rgba(239, 68, 68, 0.25)",
+                borderRadius: "var(--radius-card)",
+                padding: "2rem",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
+                  <span style={{
+                    background: "rgba(239, 68, 68, 0.15)",
+                    color: "#ef4444",
+                    borderRadius: "var(--radius-pill)",
+                    padding: "4px 14px",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase",
+                  }}>Ohne KI</span>
+                </div>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+                  {[
+                    "07:30 — Anrufe aus dem Abend vorher auf Mailbox, einzeln abhören",
+                    "08:15 — Angebotserstellung per Hand: Materialpreise recherchieren, Stunden kalkulieren",
+                    "10:00 — Unterbrechung auf der Baustelle wegen dringender Kundenanfrage",
+                    "12:30 — Büropause: 12 ungelesene E-Mails, 4 Rückrufbitten",
+                    "17:00 — Papierkram: Stundenzettel, Lieferscheine, Rechnungsentwürfe",
+                    "18:30 — Feierabend? Handy klingelt nochmal — Notfallanfrage",
+                  ].map((item, i) => (
+                    <li key={i} style={{ display: "flex", gap: "0.6rem", fontSize: "0.875rem", color: "var(--text-gray)", lineHeight: 1.5 }}>
+                      <span style={{ color: "#ef4444", flexShrink: 0, marginTop: 2 }}>✗</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Mit KI */}
+              <div style={{
+                background: "rgba(249, 115, 22, 0.05)",
+                border: "1px solid rgba(249, 115, 22, 0.25)",
+                borderRadius: "var(--radius-card)",
+                padding: "2rem",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
+                  <span style={{
+                    background: "rgba(249, 115, 22, 0.15)",
+                    color: "var(--accent)",
+                    borderRadius: "var(--radius-pill)",
+                    padding: "4px 14px",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase",
+                  }}>Mit KI</span>
+                </div>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+                  {[
+                    "07:30 — KI hat Anfragen nachts aufgenommen & priorisiert, Übersicht wartet fertig",
+                    "08:15 — Angebot in 8 Minuten: KI schlägt Positionen, Preise und Texte vor",
+                    "10:00 — Baustelle läuft ungestört; KI beantwortet Standardfragen automatisch",
+                    "12:30 — Posteingang aufgeräumt: KI hat sortiert, Dringendes markiert",
+                    "17:00 — Stundenbericht durch KI vorausgefüllt, nur kurze Kontrolle nötig",
+                    "18:30 — Feierabend ohne Unterbrechung; KI nimmt Anrufe entgegen, meldet sich morgen",
+                  ].map((item, i) => (
+                    <li key={i} style={{ display: "flex", gap: "0.6rem", fontSize: "0.875rem", color: "var(--text-gray)", lineHeight: 1.5 }}>
+                      <span style={{ color: "var(--accent)", flexShrink: 0, marginTop: 2 }}>✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── LIVE DEMO ── */}
         <LiveDemoWidget branche="handwerk" />
 
