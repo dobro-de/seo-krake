@@ -376,6 +376,50 @@ export const BRANCHEN: Branche[] = [
       dresden: "Dresden hat eine starke IT- und Beratungsszene. Dienstleister nutzen KI nicht nur für Kunden, sondern auch intern für effizientere Projektabwicklung.",
     },
   },
+  {
+    slug: "rechtsanwaelte",
+    name: "Rechtsanwälte",
+    svgPath: "M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6",
+    accentColor: "#3b82f6",
+    visualStyle: "trust",
+    metaTitle: "KI Beratung für Rechtsanwälte & Kanzleien | kiberatung.de",
+    metaDescription: "KI-Lösungen für Rechtsanwälte: Dokumentenanalyse, Mandantenbot, automatisierte Vertragsprüfung. Mehr Zeit für Mandanten, weniger Verwaltung.",
+    heroTitle: "KI BERATUNG FÜR RECHTSANWÄLTE",
+    heroSubtitle: "Mandantenakquise automatisieren, Dokumente in Sekunden analysieren, Verträge KI-gestützt prüfen — damit Sie sich auf rechtliche Beratung konzentrieren statt auf Verwaltung.",
+    challenges: [
+      { title: "Dokumentenflut", desc: "Hunderte Seiten Verträge, Akten und Schriftsätze täglich. KI analysiert, extrahiert und fasst zusammen — in Minuten statt Stunden." },
+      { title: "Mandantenakquise", desc: "Erstanfragen kommen außerhalb der Bürozeiten. KI qualifiziert Mandate rund um die Uhr und filtert ernsthafte Fälle heraus." },
+      { title: "Zeiterfassung & Abrechnung", desc: "Manuelle Stundenzettel kosten Zeit und führen zu Fehlern. KI-gestützte Zeiterfassung erfasst automatisch und erstellt Rechnungen." },
+    ],
+    loesungen: [
+      { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`, title: "Dokumentenanalyse", desc: "KI liest Verträge, findet kritische Klauseln und erstellt Zusammenfassungen — in Sekunden statt Stunden.", stat: "−85%", statLabel: "Dokumentenlesezeit" },
+      { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`, title: "Mandantenbot", desc: "KI nimmt Erstanfragen entgegen, qualifiziert das Mandat und bucht Erstberatungstermine — 24/7 ohne Sekretariat.", stat: "24/7", statLabel: "Mandantenservice" },
+      { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`, title: "Vertragsprüfung", desc: "Automatische Risikoerkennung in Vertragswerken — KI markiert problematische Klauseln und schlägt Alternativformulierungen vor.", stat: "3×", statLabel: "mehr Verträge prüfen" },
+      { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`, title: "Zeiterfassung & Abrechnung", desc: "KI erfasst Tätigkeiten automatisch, schlägt korrekte Abrechnungsposten vor und erstellt BRAGO-konforme Rechnungen.", stat: "+28%", statLabel: "Abrechnungsquote" },
+    ],
+    caseStudy: {
+      firma: "Kanzlei Berger & Partner, Berlin",
+      ergebnis: "Dokumentenanalyse −80 %, 40 % mehr Mandate ohne Mehrstellen",
+      zitat: "Früher saßen meine Associates stundenlang über Vertragswerken. Heute liefert die KI in zehn Minuten eine strukturierte Analyse — und mein Team prüft nur noch die kritischen Stellen.",
+    },
+    testimonial: {
+      name: "Dr. Sabine Berger",
+      rolle: "Partnerin, Kanzlei Berger & Partner, Berlin",
+      text: "Der Mandantenbot hat unser Intake-Prozess komplett verändert. Neue Mandanten bekommen sofort eine Antwort — auch samstags um 23 Uhr. Das Vertrauen in unsere Kanzlei ist messbar gestiegen.",
+    },
+    stadtIntros: {
+      berlin: "Berlin ist mit über 10.000 zugelassenen Anwälten der größte Rechtsmarkt Deutschlands. KI-Lösungen geben Berliner Kanzleien den Effizienzvorsprung, um in diesem Wettbewerb zu bestehen.",
+      hamburg: "Hamburg ist ein wichtiger Handels- und Seerechtsstandort. KI-Dokumentenanalyse für komplexe Vertragswerke ist hier besonders wertvoll — und spart Stunden pro Mandat.",
+      muenchen: "Münchens Kanzleien betreuen DAX-Konzerne, Startups und internationale Mandanten. KI-gestützte Mehrsprachigkeit und Vertragsanalyse sind hier Standard der Zukunft.",
+      frankfurt: "Frankfurt als Finanzplatz zieht komplexe Bankrecht- und M&A-Mandate an. KI-Dokumentenanalyse reduziert Due-Diligence-Kosten erheblich — ein echter Wettbewerbsvorteil.",
+      koeln: "Köln hat eine lebendige Kanzleiszene mit Fokus auf Medien-, IT- und Arbeitsrecht. KI-Tools für Vertrags- und Schriftsatzautomatisierung steigern die Mandatskapazität messbar.",
+      duesseldorf: "Düsseldorf ist Heimat vieler internationaler Kanzleien und Unternehmensrechtsabteilungen. Mehrsprachige KI-Kommunikation ist hier ein klarer Differenziator.",
+      stuttgart: "Stuttgarts Wirtschaftskanzleien betreuen Automotive- und Maschinenbauunternehmen. KI-gestützte IP- und Vertragsanalyse skaliert die Kapazität ohne Personalkosten.",
+      nuernberg: "Nürnbergs mittelständisch geprägte Kanzleien profitieren von KI-Automatisierung besonders: Mehr Mandate annehmen bei gleichem Team — das ist der Hebel.",
+      leipzig: "Leipzig entwickelt sich zu einem wachsenden Rechtsmarkt. Kanzleien, die früh auf KI setzen, sichern sich Wettbewerbsvorteile in einem Markt, der gerade digitalisiert.",
+      bremen: "Bremen als Handels- und Seerechtsstandort hat spezifische Anforderungen an Dokumentenanalyse. KI-gestützte Vertragsrecherche spart hier besonders viel Zeit.",
+    },
+  },
 ];
 
 export function getBrancheBySlug(slug: string): Branche | undefined {

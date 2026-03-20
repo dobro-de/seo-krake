@@ -9,7 +9,7 @@ interface Props {
   params: Promise<{ slug: string; stadt: string }>;
 }
 
-const DEDICATED_PAGES = ["gastronomie", "handwerk", "gesundheitswesen", "einzelhandel"];
+const DEDICATED_PAGES = ["gastronomie", "handwerk", "gesundheitswesen", "einzelhandel", "immobilien", "rechtsanwaelte"];
 
 const CITIES: { slug: string; name: string }[] = [
   { slug: "muenchen", name: "München" },
