@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { cities } from "./[stadt]/cityData";
 import { getBrancheBySlug, BRANCHEN } from "@/lib/branchen";
+import LiveDemoWidget from "@/components/LiveDemoWidget";
 
 export const metadata: Metadata = {
   title: "KI Beratung für Einzelhandel | kiberatung.de",
@@ -165,6 +166,9 @@ export default function EinzelhandelPage() {
             </div>
           </div>
         </section>
+
+        {/* ── LIVE DEMO ── */}
+        <LiveDemoWidget branche="einzelhandel" />
 
         {/* ── STÄDTE ── */}
         <section className="branche-section branche-challenges-bg">

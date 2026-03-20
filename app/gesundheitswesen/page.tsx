@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { cities } from "./[stadt]/cityData";
 import { variantenMap, VARIANTEN_SLUGS } from "./[stadt]/variantenData";
 import { getBrancheBySlug, BRANCHEN } from "@/lib/branchen";
+import LiveDemoWidget from "@/components/LiveDemoWidget";
 
 export const metadata: Metadata = {
   title: "KI Beratung für Arztpraxen & Gesundheitswesen | kiberatung.de",
@@ -110,6 +111,9 @@ export default function GesundheitswesenPage() {
             </div>
           </div>
         </section>
+
+        {/* ── LIVE DEMO ── */}
+        <LiveDemoWidget branche="gesundheitswesen" />
 
         {/* ── FACHRICHTUNGEN ── */}
         <section className="branche-section branche-challenges-bg">

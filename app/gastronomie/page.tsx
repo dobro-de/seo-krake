@@ -5,6 +5,7 @@ import GastronomieFooter from "@/components/GastronomieFooter";
 import { cities } from "./[stadt]/cityData";
 import { variantenMap, VARIANTEN_SLUGS } from "./[stadt]/variantenData";
 import { getBrancheBySlug, BRANCHEN } from "@/lib/branchen";
+import LiveDemoWidget from "@/components/LiveDemoWidget";
 
 export const metadata: Metadata = {
   title: "KI Beratung für Gastronomie & Restaurants | kiberatung.de",
@@ -116,6 +117,9 @@ export default function GastronomiePage() {
             </div>
           </div>
         </section>
+
+        {/* ── LIVE DEMO ── */}
+        <LiveDemoWidget branche="gastronomie" />
 
         {/* ── STÄDTE ── */}
         <section className="branche-section branche-challenges-bg">
