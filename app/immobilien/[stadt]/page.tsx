@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { cityMap, generateStaticParamsList, type CityData } from "./cityData";
+import { getVariantBySlug, VARIANTEN_SLUGS } from "./variantenData";
 
 import LocalHero from "./components/LocalHero";
 import CityStats from "./components/CityStats";
@@ -14,12 +15,17 @@ import CTASection from "./components/CTASection";
 
 // ─── Static Params ──────────────────────────────────────────────────────────
 export function generateStaticParams() {
-  return generateStaticParamsList();
+  return [
+    ...generateStaticParamsList(),
+    ...VARIANTEN_SLUGS.map((s) => ({ stadt: s })),
+  ];
 }
 
 // ─── Resolve slug to CityData ────────────────────────────────────────────────
 function resolveData(slug: string): CityData | null {
   if (cityMap[slug]) return cityMap[slug];
+  const v = getVariantBySlug(slug);
+  if (v) return { ...v, layout: 1 };
   return null;
 }
 
