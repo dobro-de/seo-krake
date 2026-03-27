@@ -186,6 +186,28 @@ export default function EinzelhandelPage() {
           </div>
         </section>
 
+        {/* ── TESTIMONIAL ── */}
+        <FadeInSection>
+          <section className="branche-section">
+            <div className="container">
+              <div className="branche-section-head">
+                <span className="section-eyebrow">Kundenstimme</span>
+                <h2 className="section-heading section-heading-center">Was unsere Kunden sagen</h2>
+              </div>
+              <div className="branche-testimonial-card">
+                <svg className="branche-testimonial-quote-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                  <path d="M10 8C5.6 8 2 11.6 2 16s3.6 8 8 8c1.6 0 3-.4 4.2-1.2L20 24l-1.2-5.8C19.6 17 20 15.6 20 14c0-3.3-4.5-6-10-6zm0 12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm12-12c-1.3 0-2.5.3-3.6.8.3.7.6 1.4.8 2.2.9-.3 1.8-.4 2.8-.4 2.2 0 4 1.8 4 4s-1.8 4-4 4c-.3 0-.7 0-1-.1L18 20l1.8-3.6c-.1-.4-.2-.9-.2-1.4 0-.4 0-.8.1-1.2C18.6 12.8 16 10.7 16 8.5c0-1.4.7-2.5 2-3 .6-.2 1.3-.5 2-.5 2.2 0 4 1.8 4 4z" />
+                </svg>
+                <p className="branche-testimonial-text">{b.testimonial.text}</p>
+                <div className="branche-testimonial-author">
+                  <span className="branche-testimonial-name">{b.testimonial.name}</span>
+                  <span className="branche-testimonial-rolle">{b.testimonial.rolle}</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </FadeInSection>
+
         {/* ── CTA ── */}
         <section className="branche-cta-section">
           <div className="container">

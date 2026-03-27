@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import AnimatedStat from "@/components/ui/AnimatedStat";
 import FadeInSection from "@/components/ui/FadeInSection";
 import type { Branche } from "@/lib/branchen";
 import { BRANCHEN } from "@/lib/branchen";
@@ -82,12 +81,15 @@ export default function BrancheContent({ b, slug }: BrancheContentProps) {
           </h1>
           <p className="branche-subtitle">{b.heroSubtitle}</p>
 
-          {/* Stats with countUp */}
+          {/* Stats — direkte Anzeige ohne Animation (keine Zahlen-Counter nötig) */}
           <div className="branche-hero-stats">
             {b.loesungen.slice(0, 3).map((l, i) => (
               <>
                 {i > 0 && <div key={`d${i}`} className="branche-hero-stat-divider" />}
-                <AnimatedStat key={l.title} value={l.stat} label={l.statLabel} />
+                <div key={l.title} className="branche-hero-stat">
+                  <span className="branche-hero-stat-val">{l.stat}</span>
+                  <span className="branche-hero-stat-lbl">{l.statLabel}</span>
+                </div>
               </>
             ))}
           </div>
