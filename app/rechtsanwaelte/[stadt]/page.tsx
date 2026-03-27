@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { cityMap, generateStaticParamsList, type CityData } from "./cityData";
+import Link from "next/link";
+import { cities, cityMap, generateStaticParamsList, type CityData } from "./cityData";
 
 import LocalHero from "./components/LocalHero";
 import CityStats from "./components/CityStats";
@@ -89,11 +90,37 @@ export default async function RechtsanwaelteStadtPage({
 
   const order: (keyof typeof sections)[] = ["hero", "stats", "problems", "features", "caseStudy", "faq", "cta"];
 
+  const idx = cities.findIndex((c) => c.slug === city.slug);
+  const relatedCities = [
+    ...cities.slice(Math.max(0, idx - 2), idx),
+    ...cities.slice(idx + 1, idx + 3),
+  ].slice(0, 4);
+
   return (
     <>
       <SchemaMarkup name={city.name} slug={city.slug} />
       <Nav />
-      <main>{order.map((key) => sections[key])}</main>
+      <main>
+        {order.map((key) => sections[key])}
+        <section style={{ background: "var(--bg-card)", padding: "2rem 0", borderTop: "1px solid var(--border-subtle)" }}>
+          <div className="container">
+            <p style={{ color: "var(--text-gray)", fontSize: "13px", marginBottom: "10px" }}>
+              KI Beratung Rechtsanwälte in weiteren Städten:
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {relatedCities.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/rechtsanwaelte/${c.slug}`}
+                  style={{ fontSize: "13px", color: "var(--accent)", textDecoration: "none", padding: "4px 10px", border: "1px solid var(--border-subtle)", borderRadius: "4px" }}
+                >
+                  {c.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
       <Footer />
     </>
   );
