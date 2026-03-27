@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "KI-Lösungen für Dienstleister: automatischer Kundensupport, smarte Terminverwaltung und KI-gestütztes Angebotswesen. Kostenlos beraten lassen.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/dienstleistungen",
+    canonical: "https://kiberatung.de/dienstleistungen",
   },
 };
 

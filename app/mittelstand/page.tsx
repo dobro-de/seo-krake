@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "KI-Lösungen für den deutschen Mittelstand: Prozessautomatisierung, KI-Datenanalyse, Predictive Maintenance, Dokumentenverarbeitung. Kostenlose Erstberatung.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/mittelstand",
+    canonical: "https://kiberatung.de/mittelstand",
   },
 };
 

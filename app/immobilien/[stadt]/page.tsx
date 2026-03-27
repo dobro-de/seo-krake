@@ -42,11 +42,11 @@ export async function generateMetadata({
   return {
     title: city.metaTitle,
     description: city.metaDescription,
-    alternates: { canonical: `https://kiberatung-v2.vercel.app/immobilien/${city.slug}` },
+    alternates: { canonical: `https://kiberatung.de/immobilien/${city.slug}` },
     openGraph: {
       title: city.metaTitle,
       description: city.metaDescription,
-      url: `https://kiberatung-v2.vercel.app/immobilien/${city.slug}`,
+      url: `https://kiberatung.de/immobilien/${city.slug}`,
       siteName: "KI Beratung",
       locale: "de_DE",
       type: "website",
@@ -65,8 +65,8 @@ function SchemaMarkup({ name, slug }: { name: string; slug: string }) {
           "@type": "Service",
           name: `KI Beratung Immobilien ${name}`,
           serviceType: "KI Beratung",
-          provider: { "@type": "Organization", name: "KI Beratung", url: "https://kiberatung-v2.vercel.app" },
-          url: `https://kiberatung-v2.vercel.app/immobilien/${slug}`,
+          provider: { "@type": "Organization", name: "KI Beratung", url: "https://kiberatung.de" },
+          url: `https://kiberatung.de/immobilien/${slug}`,
           offers: { "@type": "Offer", price: "0", priceCurrency: "EUR", description: "Kostenlose Erstberatung" },
         }),
       }}

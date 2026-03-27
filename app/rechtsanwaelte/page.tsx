@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "KI-Lösungen für Rechtsanwälte: Dokumentenanalyse, Mandantenbot, automatisierte Vertragsprüfung. Mehr Zeit für Mandanten, weniger Verwaltung.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/rechtsanwaelte",
+    canonical: "https://kiberatung.de/rechtsanwaelte",
   },
 };
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "KI-Lösungen für Einzelhändler: Bestandsoptimierung, personalisierte Kundenansprache und automatisiertes Marketing. Kostenlos beraten lassen.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/einzelhandel",
+    canonical: "https://kiberatung.de/einzelhandel",
   },
 };
 

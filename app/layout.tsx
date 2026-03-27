@@ -24,10 +24,13 @@ export const metadata: Metadata = {
     "Professionelle KI Beratung für Unternehmen. Wir entwickeln Ihre KI-Strategie, automatisieren Prozesse und steigern die Effizienz. Kostenlose Erstberatung.",
   keywords:
     "KI Beratung, KI Beratung Unternehmen, KI Strategie, KI Implementierung, Künstliche Intelligenz Beratung",
+  alternates: { canonical: "https://kiberatung.de" },
   openGraph: {
     title: "KI Beratung für Unternehmen | Strategie & Implementierung",
     description:
       "Professionelle KI Beratung für Unternehmen. Kostenlose Erstberatung.",
+    url: "https://kiberatung.de",
+    siteName: "kiberatung.de",
     type: "website",
     locale: "de_DE",
   },
@@ -54,12 +57,15 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              "name": "KI Beratung",
-              "description": "Professionelle KI Beratung für Unternehmen. Strategie, Implementierung und Prozessautomatisierung.",
-              "url": "https://kiberatung-v2.vercel.app",
+              "@type": "Organization",
+              "name": "Everlast Consulting",
+              "alternateName": "kiberatung.de",
+              "description": "Professionelle KI Beratung für Unternehmen. Strategie, Implementierung und Prozessautomatisierung mit Künstlicher Intelligenz.",
+              "url": "https://kiberatung.de",
+              "email": "info@kiberatung.de",
               "areaServed": "DE",
-              "knowsAbout": ["Künstliche Intelligenz", "KI Beratung", "Prozessautomatisierung", "KI-Strategie"],
+              "knowsAbout": ["Künstliche Intelligenz", "KI Beratung", "Prozessautomatisierung", "KI-Strategie", "KI Chatbot", "KI Telefonassistent"],
+              "sameAs": ["https://kiberatung.de"],
             }),
           }}
         />

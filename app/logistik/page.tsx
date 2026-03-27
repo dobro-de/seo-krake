@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "KI-Lösungen für Logistikunternehmen: Sendungsstatus-Automatisierung, Abholtermin-Koordination, Reklamations-Erstannahme. Kostenlos beraten lassen.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/logistik",
+    canonical: "https://kiberatung.de/logistik",
   },
 };
 

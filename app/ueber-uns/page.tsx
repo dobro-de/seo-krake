@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Everlast Consulting aus Mannheim — wir bringen KI-Technologie in den deutschen Mittelstand. Lernen Sie unser Team, unsere Mission und unsere Werte kennen.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/ueber-uns",
+    canonical: "https://kiberatung.de/ueber-uns",
   },
 };
 

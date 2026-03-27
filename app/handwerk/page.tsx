@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "KI-Lösungen für Handwerker: Angebotserstellung, Terminplanung, Kundenkommunikation automatisieren. Weniger Büro, mehr Baustelle. Kostenlose Erstberatung.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/handwerk",
+    canonical: "https://kiberatung.de/handwerk",
   },
 };
 

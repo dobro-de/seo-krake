@@ -20,11 +20,11 @@ export async function generateMetadata({
   return {
     title: data.metaTitle,
     description: data.metaDescription,
-    alternates: { canonical: `https://kiberatung-v2.vercel.app/mittelstand/${slug}` },
+    alternates: { canonical: `https://kiberatung.de/mittelstand/${slug}` },
     openGraph: {
       title: data.metaTitle,
       description: data.metaDescription,
-      url: `https://kiberatung-v2.vercel.app/mittelstand/${slug}`,
+      url: `https://kiberatung.de/mittelstand/${slug}`,
       siteName: "KI Beratung",
       locale: "de_DE",
       type: "website",
@@ -41,9 +41,9 @@ function SchemaMarkup({ data }: { data: SlugData }) {
     provider: {
       "@type": "Organization",
       name: "KI Beratung",
-      url: "https://kiberatung-v2.vercel.app",
+      url: "https://kiberatung.de",
     },
-    url: `https://kiberatung-v2.vercel.app/mittelstand/${data.slug}`,
+    url: `https://kiberatung.de/mittelstand/${data.slug}`,
     offers: {
       "@type": "Offer",
       price: "0",

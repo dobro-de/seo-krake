@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Buchen Sie jetzt Ihr kostenloses 30-Minuten-Erstgespräch. Keine Verpflichtung, keine versteckten Kosten. Wir analysieren Ihre größten KI-Hebel.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/termin-buchen",
+    canonical: "https://kiberatung.de/termin-buchen",
   },
 };
 

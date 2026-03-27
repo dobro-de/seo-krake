@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "KI-Chatbot für Ihre Website: 24/7 Kundenfragen beantworten, Termine buchen, Leads qualifizieren. In 48 Stunden live. Monatlich ab €149.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/ki-chatbot",
+    canonical: "https://kiberatung.de/ki-chatbot",
   },
 };
 

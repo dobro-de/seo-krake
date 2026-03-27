@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Transparente Preise für KI-Lösungen: Starter ab €149/Monat, Professional ab €349/Monat, Enterprise auf Anfrage. Monatlich kündbar. DSGVO-konform.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/preise",
+    canonical: "https://kiberatung.de/preise",
   },
 };
 

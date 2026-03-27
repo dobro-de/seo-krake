@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "KI-Lösungen für Immobilienmakler: Exposé-Generator, Interessenten-Chatbot, automatische Marktanalysen. Mehr Besichtigungen, weniger Verwaltung.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/immobilien",
+    canonical: "https://kiberatung.de/immobilien",
   },
 };
 

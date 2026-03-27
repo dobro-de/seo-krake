@@ -36,11 +36,11 @@ export async function generateMetadata({
   return {
     title: city.metaTitle,
     description: city.metaDescription,
-    alternates: { canonical: `https://kiberatung-v2.vercel.app/rechtsanwaelte/${city.slug}` },
+    alternates: { canonical: `https://kiberatung.de/rechtsanwaelte/${city.slug}` },
     openGraph: {
       title: city.metaTitle,
       description: city.metaDescription,
-      url: `https://kiberatung-v2.vercel.app/rechtsanwaelte/${city.slug}`,
+      url: `https://kiberatung.de/rechtsanwaelte/${city.slug}`,
       siteName: "KI Beratung",
       locale: "de_DE",
       type: "website",
@@ -59,8 +59,8 @@ function SchemaMarkup({ name, slug }: { name: string; slug: string }) {
           "@type": "Service",
           name: `KI Beratung Rechtsanwälte ${name}`,
           serviceType: "KI Beratung",
-          provider: { "@type": "Organization", name: "KI Beratung", url: "https://kiberatung-v2.vercel.app" },
-          url: `https://kiberatung-v2.vercel.app/rechtsanwaelte/${slug}`,
+          provider: { "@type": "Organization", name: "KI Beratung", url: "https://kiberatung.de" },
+          url: `https://kiberatung.de/rechtsanwaelte/${slug}`,
           offers: { "@type": "Offer", price: "0", priceCurrency: "EUR", description: "Kostenlose Erstberatung" },
         }),
       }}

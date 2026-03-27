@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "KI-Lösungen für Arztpraxen, Kliniken und Gesundheitsdienstleister: Terminmanagement, Dokumentation, Patientenkommunikation — DSGVO-konform.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/gesundheitswesen",
+    canonical: "https://kiberatung.de/gesundheitswesen",
   },
 };
 

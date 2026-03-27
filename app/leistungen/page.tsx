@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Unsere KI-Lösungen: Telefonassistent, Chatbot, Prozessautomatisierung, Buchungssystem, Bewertungsmanagement und mehr. Kostenlose Erstberatung.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/leistungen",
+    canonical: "https://kiberatung.de/leistungen",
   },
 };
 

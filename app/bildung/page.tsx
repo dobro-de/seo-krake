@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "KI-Lösungen für Bildungseinrichtungen: automatische Kursbuchungen, FAQ-Beantwortung und Prüfungsbegleitung. Damit Lehrkräfte mehr Zeit fürs Wesentliche haben.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/bildung",
+    canonical: "https://kiberatung.de/bildung",
   },
 };
 

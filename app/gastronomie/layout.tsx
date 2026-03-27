@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "KI-Lösungen für Restaurants, Hotels und Cafés: Reservierungsbot, Bewertungsmanagement, Speisekarten-KI. Kostenlos beraten lassen.",
   alternates: {
-    canonical: "https://kiberatung-v2.vercel.app/gastronomie",
+    canonical: "https://kiberatung.de/gastronomie",
   },
 };
 
