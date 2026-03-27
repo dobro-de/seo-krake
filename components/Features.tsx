@@ -229,13 +229,13 @@ export default function Features() {
             <div className="bento-glow" aria-hidden="true" />
           </motion.div>
 
-          {/* Row 3: span-1 + span-1 */}
+          {/* Row 3: span-1 + span-2 (last card stretches to fill grid) */}
           <motion.div className="bento-card" variants={bentoItemVariants}>
             <div className="bento-icon" aria-hidden="true">{features[4].svg}</div>
             <h3>{features[4].title}</h3>
             <p>{features[4].description}</p>
           </motion.div>
-          <motion.div className="bento-card" variants={bentoItemVariants}>
+          <motion.div className="bento-card bento-card-large" variants={bentoItemVariants}>
             <div className="bento-icon" aria-hidden="true">{features[5].svg}</div>
             <h3>{features[5].title}</h3>
             <p>{features[5].description}</p>
