@@ -2683,3 +2683,137 @@ body {
 .related-post-link:hover {
   border-color: rgba(249, 115, 22, 0.4);
 }
+
+/* =========================================
+   SCROLL QUOTE
+   ========================================= */
+
+.scroll-quote-section {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(250, 239, 112, 0.03) 50%, transparent 100%);
+}
+
+.scroll-quote-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.scroll-quote-mark {
+  display: block;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.4;
+  font-family: Georgia, serif;
+  margin-bottom: -1rem;
+}
+
+.scroll-quote-text {
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  color: var(--text-white);
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+}
+
+.scroll-quote-word {
+  display: inline;
+}
+
+.scroll-quote-author {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  letter-spacing: 0.04em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-quote-word {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* =========================================
+   GRADIENT BORDER / GLOW EFFECTS
+   ========================================= */
+
+/* Upgrade bento card hover glow to accent yellow */
+.bento-card:hover {
+  border-color: rgba(250, 239, 112, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(250, 239, 112, 0.08),
+    inset 0 1px 0 rgba(250, 239, 112, 0.06);
+}
+
+/* Gradient border pseudo-element for bento cards */
+.bento-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(250, 239, 112, 0.15) 0%,
+    transparent 40%,
+    rgba(250, 239, 112, 0.05) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bento-card:hover::after {
+  opacity: 1;
+}
+
+/* Solution card glow on hover */
+.branche-solution-card:hover {
+  border-color: rgba(250, 239, 112, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(250, 239, 112, 0.06);
+}
+
+.branche-solution-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(250, 239, 112, 0.12) 0%,
+    transparent 50%,
+    rgba(250, 239, 112, 0.04) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.branche-solution-card:hover::after {
+  opacity: 1;
+}
+
+/* Ensure solution cards have position relative for pseudo-element */
+.branche-solution-card {
+  position: relative;
+}
+
+/* Challenge card hover glow */
+.branche-challenge-card {
+  position: relative;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.branche-challenge-card:hover {
+  border-color: rgba(250, 239, 112, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}

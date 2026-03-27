@@ -6,6 +6,12 @@ import { cities } from "./[stadt]/cityData";
 import { variantenMap, VARIANTEN_SLUGS } from "./[stadt]/variantenData";
 import { getBrancheBySlug, BRANCHEN } from "@/lib/branchen";
 import LiveDemoWidget from "@/components/LiveDemoWidget";
+import AnimatedStat from "@/components/ui/AnimatedStat";
+import FadeInSection from "@/components/ui/FadeInSection";
+import ScrollQuote from "@/components/ScrollQuote";
+import ChallengeGrid from "@/components/ChallengeGrid";
+import SolutionGrid from "@/components/SolutionGrid";
+import ParallaxHero from "@/components/ParallaxHero";
 
 export const metadata: Metadata = {
   title: "KI Beratung für Arztpraxen & Gesundheitswesen | kiberatung.de",
@@ -25,8 +31,9 @@ export default function GesundheitswesenPage() {
       <main>
 
         {/* ── HERO ── */}
-        <section className="branche-hero" style={{ paddingBottom: "4rem" }}>
-          <div className="container">
+        <section className="branche-hero" style={{ paddingBottom: "4rem", position: "relative" }}>
+          <ParallaxHero />
+          <div className="container" style={{ position: "relative", zIndex: 1 }}>
             <nav className="branche-breadcrumb" aria-label="Breadcrumb">
               <Link href="/">Startseite</Link>
               <span>›</span>
@@ -47,20 +54,11 @@ export default function GesundheitswesenPage() {
             <p className="branche-subtitle">{b.heroSubtitle}</p>
 
             <div className="branche-hero-stats">
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">400.000+</span>
-                <span className="branche-hero-stat-lbl">Arztpraxen & Kliniken in Deutschland</span>
-              </div>
+              <AnimatedStat value="400.000+" label="Arztpraxen & Kliniken in Deutschland" />
               <div className="branche-hero-stat-divider" />
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">−40 %</span>
-                <span className="branche-hero-stat-lbl">No-Show-Rate mit KI-Recall</span>
-              </div>
+              <AnimatedStat value="−40%" label="No-Show-Rate mit KI-Recall" />
               <div className="branche-hero-stat-divider" />
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">2–3h</span>
-                <span className="branche-hero-stat-lbl">täglich eingespart durch KI-Doku</span>
-              </div>
+              <AnimatedStat value="2–3h" label="täglich eingespart durch KI-Doku" />
             </div>
 
             <div className="branche-actions" style={{ marginTop: "2rem" }}>
@@ -71,46 +69,36 @@ export default function GesundheitswesenPage() {
         </section>
 
         {/* ── HERAUSFORDERUNGEN ── */}
-        <section className="branche-section branche-challenges-bg">
-          <div className="container">
-            <div className="branche-section-head">
-              <span className="section-eyebrow">Herausforderungen</span>
-              <h2 className="section-heading section-heading-center">Was bremst das Gesundheitswesen?</h2>
+        <FadeInSection>
+          <section className="branche-section branche-challenges-bg">
+            <div className="container">
+              <div className="branche-section-head">
+                <span className="section-eyebrow">Herausforderungen</span>
+                <h2 className="section-heading section-heading-center">Was bremst das Gesundheitswesen?</h2>
+              </div>
+              <ChallengeGrid challenges={b.challenges} />
             </div>
-            <div className="branche-challenges-grid">
-              {b.challenges.map((c, i) => (
-                <div key={i} className="branche-challenge-card">
-                  <span className="branche-num">0{i + 1}</span>
-                  <h3>{c.title}</h3>
-                  <p>{c.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        </FadeInSection>
+
+        {/* ── SCROLL QUOTE ── */}
+        <ScrollQuote
+          quote={b.caseStudy.zitat}
+          author={b.caseStudy.firma}
+        />
 
         {/* ── LÖSUNGEN ── */}
-        <section id="loesungen" className="branche-section">
-          <div className="container">
-            <div className="branche-section-head">
-              <span className="section-eyebrow">KI-Lösungen</span>
-              <h2 className="section-heading section-heading-center">Was wir für Ihre Praxis tun</h2>
+        <FadeInSection>
+          <section id="loesungen" className="branche-section">
+            <div className="container">
+              <div className="branche-section-head">
+                <span className="section-eyebrow">KI-Lösungen</span>
+                <h2 className="section-heading section-heading-center">Was wir für Ihre Praxis tun</h2>
+              </div>
+              <SolutionGrid loesungen={b.loesungen} />
             </div>
-            <div className="branche-solutions-grid">
-              {b.loesungen.map((l, i) => (
-                <div key={i} className="branche-solution-card">
-                  <div className="branche-sol-icon" dangerouslySetInnerHTML={{ __html: l.icon }} />
-                  <h3 className="branche-sol-title">{l.title}</h3>
-                  <p className="branche-sol-desc">{l.desc}</p>
-                  <div className="branche-sol-stat">
-                    <span className="branche-sol-val">{l.stat}</span>
-                    <span className="branche-sol-lbl">{l.statLabel}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        </FadeInSection>
 
         {/* ── LIVE DEMO ── */}
         <LiveDemoWidget branche="gesundheitswesen" />

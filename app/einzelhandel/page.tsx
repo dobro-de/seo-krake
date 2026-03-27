@@ -6,6 +6,12 @@ import { cities } from "./[stadt]/cityData";
 import { variantenMap, VARIANTEN_SLUGS } from "./[stadt]/variantenData";
 import { getBrancheBySlug, BRANCHEN } from "@/lib/branchen";
 import LiveDemoWidget from "@/components/LiveDemoWidget";
+import AnimatedStat from "@/components/ui/AnimatedStat";
+import FadeInSection from "@/components/ui/FadeInSection";
+import ScrollQuote from "@/components/ScrollQuote";
+import ChallengeGrid from "@/components/ChallengeGrid";
+import SolutionGrid from "@/components/SolutionGrid";
+import ParallaxHero from "@/components/ParallaxHero";
 
 export const metadata: Metadata = {
   title: "KI Beratung für Einzelhandel | kiberatung.de",
@@ -77,8 +83,9 @@ export default function EinzelhandelPage() {
       <main>
 
         {/* ── HERO ── */}
-        <section className="branche-hero" style={{ paddingBottom: "4rem" }}>
-          <div className="container">
+        <section className="branche-hero" style={{ paddingBottom: "4rem", position: "relative" }}>
+          <ParallaxHero />
+          <div className="container" style={{ position: "relative", zIndex: 1 }}>
             <nav className="branche-breadcrumb" aria-label="Breadcrumb">
               <Link href="/">Startseite</Link>
               <span>›</span>
@@ -103,20 +110,11 @@ export default function EinzelhandelPage() {
 
             {/* Hero stats */}
             <div className="branche-hero-stats">
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">300.000+</span>
-                <span className="branche-hero-stat-lbl">Einzelhandelsbetriebe in DE</span>
-              </div>
+              <AnimatedStat value="300.000+" label="Einzelhandelsbetriebe in DE" />
               <div className="branche-hero-stat-divider" />
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">−30%</span>
-                <span className="branche-hero-stat-lbl">Lagerkosten mit KI-Prognosen</span>
-              </div>
+              <AnimatedStat value="−30%" label="Lagerkosten mit KI-Prognosen" />
               <div className="branche-hero-stat-divider" />
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">+35%</span>
-                <span className="branche-hero-stat-lbl">Wiederkaufrate durch Personalisierung</span>
-              </div>
+              <AnimatedStat value="+35%" label="Wiederkaufrate durch Personalisierung" />
             </div>
 
             <div className="branche-actions" style={{ marginTop: "2rem" }}>
@@ -127,46 +125,36 @@ export default function EinzelhandelPage() {
         </section>
 
         {/* ── HERAUSFORDERUNGEN ── */}
-        <section className="branche-section branche-challenges-bg">
+        <FadeInSection>
+          <section className="branche-section branche-challenges-bg">
           <div className="container">
             <div className="branche-section-head">
               <span className="section-eyebrow">Herausforderungen</span>
               <h2 className="section-heading section-heading-center">Was hält Einzelhändler zurück?</h2>
             </div>
-            <div className="branche-challenges-grid">
-              {b.challenges.map((c, i) => (
-                <div key={i} className="branche-challenge-card">
-                  <span className="branche-num">0{i + 1}</span>
-                  <h3>{c.title}</h3>
-                  <p>{c.desc}</p>
-                </div>
-              ))}
-            </div>
+              <ChallengeGrid challenges={b.challenges} />
           </div>
         </section>
+        </FadeInSection>
+
+        {/* ── SCROLL QUOTE ── */}
+        <ScrollQuote
+          quote={b.caseStudy.zitat}
+          author={b.caseStudy.firma}
+        />
 
         {/* ── LÖSUNGEN ── */}
-        <section id="loesungen" className="branche-section">
+        <FadeInSection>
+          <section id="loesungen" className="branche-section">
           <div className="container">
             <div className="branche-section-head">
               <span className="section-eyebrow">KI-Lösungen</span>
               <h2 className="section-heading section-heading-center">Was wir für Ihren Einzelhandel tun</h2>
             </div>
-            <div className="branche-solutions-grid">
-              {b.loesungen.map((l, i) => (
-                <div key={i} className="branche-solution-card">
-                  <div className="branche-sol-icon" dangerouslySetInnerHTML={{ __html: l.icon }} />
-                  <h3 className="branche-sol-title">{l.title}</h3>
-                  <p className="branche-sol-desc">{l.desc}</p>
-                  <div className="branche-sol-stat">
-                    <span className="branche-sol-val">{l.stat}</span>
-                    <span className="branche-sol-lbl">{l.statLabel}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+              <SolutionGrid loesungen={b.loesungen} />
           </div>
         </section>
+        </FadeInSection>
 
         {/* ── LIVE DEMO ── */}
         <LiveDemoWidget branche="einzelhandel" />

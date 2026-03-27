@@ -6,6 +6,12 @@ import { cities } from "./[stadt]/cityData";
 import { variantenMap, VARIANTEN_SLUGS } from "./[stadt]/variantenData";
 import { getBrancheBySlug, BRANCHEN } from "@/lib/branchen";
 import LiveDemoWidget from "@/components/LiveDemoWidget";
+import AnimatedStat from "@/components/ui/AnimatedStat";
+import FadeInSection from "@/components/ui/FadeInSection";
+import ScrollQuote from "@/components/ScrollQuote";
+import ChallengeGrid from "@/components/ChallengeGrid";
+import SolutionGrid from "@/components/SolutionGrid";
+import ParallaxHero from "@/components/ParallaxHero";
 
 export const metadata: Metadata = {
   title: "KI Beratung für Handwerksbetriebe | kiberatung.de",
@@ -25,8 +31,9 @@ export default function HandwerkPage() {
       <main>
 
         {/* ── HERO ── */}
-        <section className="branche-hero" style={{ paddingBottom: "4rem" }}>
-          <div className="container">
+        <section className="branche-hero" style={{ paddingBottom: "4rem", position: "relative" }}>
+          <ParallaxHero />
+          <div className="container" style={{ position: "relative", zIndex: 1 }}>
             <nav className="branche-breadcrumb" aria-label="Breadcrumb">
               <Link href="/">Startseite</Link>
               <span>›</span>
@@ -49,20 +56,11 @@ export default function HandwerkPage() {
 
             {/* Hero stats */}
             <div className="branche-hero-stats">
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">1 Mio+</span>
-                <span className="branche-hero-stat-lbl">Handwerksbetriebe in Deutschland</span>
-              </div>
+              <AnimatedStat value="1 Mio+" label="Handwerksbetriebe in Deutschland" />
               <div className="branche-hero-stat-divider" />
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">−78 %</span>
-                <span className="branche-hero-stat-lbl">Angebotszeit mit KI</span>
-              </div>
+              <AnimatedStat value="−78%" label="Angebotszeit mit KI" />
               <div className="branche-hero-stat-divider" />
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">24/7</span>
-                <span className="branche-hero-stat-lbl">Erreichbar für Ihre Kunden</span>
-              </div>
+              <AnimatedStat value="24/7" label="Erreichbar für Ihre Kunden" />
             </div>
 
             <div className="branche-actions" style={{ marginTop: "2rem" }}>
@@ -73,79 +71,68 @@ export default function HandwerkPage() {
         </section>
 
         {/* ── HERAUSFORDERUNGEN ── */}
-        <section className="branche-section branche-challenges-bg">
-          <div className="container">
-            <div className="branche-section-head">
-              <span className="section-eyebrow">Herausforderungen</span>
-              <h2 className="section-heading section-heading-center">Was hält Handwerker zurück?</h2>
+        <FadeInSection>
+          <section className="branche-section branche-challenges-bg">
+            <div className="container">
+              <div className="branche-section-head">
+                <span className="section-eyebrow">Herausforderungen</span>
+                <h2 className="section-heading section-heading-center">Was hält Handwerker zurück?</h2>
+              </div>
+              <ChallengeGrid challenges={b.challenges} />
             </div>
-            <div className="branche-challenges-grid">
-              {b.challenges.map((c, i) => (
-                <div key={i} className="branche-challenge-card">
-                  <span className="branche-num">0{i + 1}</span>
-                  <h3>{c.title}</h3>
-                  <p>{c.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        </FadeInSection>
+
+        {/* ── SCROLL QUOTE ── */}
+        <ScrollQuote
+          quote={b.caseStudy.zitat}
+          author={b.caseStudy.firma}
+        />
 
         {/* ── LÖSUNGEN ── */}
-        <section id="loesungen" className="branche-section">
-          <div className="container">
-            <div className="branche-section-head">
-              <span className="section-eyebrow">KI-Lösungen</span>
-              <h2 className="section-heading section-heading-center">Was wir für Ihr Handwerk tun</h2>
+        <FadeInSection>
+          <section id="loesungen" className="branche-section">
+            <div className="container">
+              <div className="branche-section-head">
+                <span className="section-eyebrow">KI-Lösungen</span>
+                <h2 className="section-heading section-heading-center">Was wir für Ihr Handwerk tun</h2>
+              </div>
+              <SolutionGrid loesungen={b.loesungen} />
             </div>
-            <div className="branche-solutions-grid">
-              {b.loesungen.map((l, i) => (
-                <div key={i} className="branche-solution-card">
-                  <div className="branche-sol-icon" dangerouslySetInnerHTML={{ __html: l.icon }} />
-                  <h3 className="branche-sol-title">{l.title}</h3>
-                  <p className="branche-sol-desc">{l.desc}</p>
-                  <div className="branche-sol-stat">
-                    <span className="branche-sol-val">{l.stat}</span>
-                    <span className="branche-sol-lbl">{l.statLabel}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        </FadeInSection>
 
         {/* ── TYPISCHE PROBLEME IN ZAHLEN ── */}
-        <section className="branche-section branche-challenges-bg">
-          <div className="container">
-            <div className="branche-section-head">
-              <span className="section-eyebrow">Fakten & Zahlen</span>
-              <h2 className="section-heading section-heading-center">Typische Probleme in Zahlen</h2>
-              <p className="section-sub section-sub-center" style={{ maxWidth: 560, margin: "0.75rem auto 0" }}>
-                Was die Zahlen über den Alltag im Handwerk sagen — und warum KI hier den Unterschied macht.
-              </p>
+        <FadeInSection>
+          <section className="branche-section branche-challenges-bg">
+            <div className="container">
+              <div className="branche-section-head">
+                <span className="section-eyebrow">Fakten & Zahlen</span>
+                <h2 className="section-heading section-heading-center">Typische Probleme in Zahlen</h2>
+                <p className="section-sub section-sub-center" style={{ maxWidth: 560, margin: "0.75rem auto 0" }}>
+                  Was die Zahlen über den Alltag im Handwerk sagen — und warum KI hier den Unterschied macht.
+                </p>
+              </div>
+              <div className="branche-challenges-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
+                <div className="branche-challenge-card" style={{ borderTop: "3px solid var(--accent)" }}>
+                  <AnimatedStat value="63%" label="Anfragen außerhalb der Öffnungszeiten" />
+                  <p style={{ marginBottom: "0.75rem", marginTop: "0.5rem", fontSize: "0.875rem", color: "var(--text-gray)", lineHeight: 1.65 }}>Über die Hälfte aller Kundenanfragen gehen außerhalb Ihrer Geschäftszeiten ein — und bleiben ohne KI unbeantwortet.</p>
+                  <cite style={{ fontSize: "0.75rem", color: "var(--text-gray)", fontStyle: "normal" }}>Quelle: Bitkom 2023</cite>
+                </div>
+                <div className="branche-challenge-card" style={{ borderTop: "3px solid var(--accent)" }}>
+                  <AnimatedStat value="3,5 h" label="Verlust pro Woche durch Telefonbearbeitung" />
+                  <p style={{ marginBottom: "0.75rem", marginTop: "0.5rem", fontSize: "0.875rem", color: "var(--text-gray)", lineHeight: 1.65 }}>Handwerksbetriebe verlieren im Schnitt 3,5 Stunden pro Woche allein durch das Entgegennehmen, Weiterleiten und Nachbearbeiten von Telefonanrufen.</p>
+                  <cite style={{ fontSize: "0.75rem", color: "var(--text-gray)", fontStyle: "normal" }}>Schätzung auf Basis branchenüblicher Benchmarks</cite>
+                </div>
+                <div className="branche-challenge-card" style={{ borderTop: "3px solid var(--accent)" }}>
+                  <AnimatedStat value="50.000+" label="Betriebe betroffen durch BFSG ab 2025" />
+                  <p style={{ marginBottom: "0.75rem", marginTop: "0.5rem", fontSize: "0.875rem", color: "var(--text-gray)", lineHeight: 1.65 }}>Das Barrierefreiheitsstärkungsgesetz (BFSG) tritt ab Juni 2025 in Kraft. Bis zu 50.000 Handwerksbetriebe müssen ihre digitalen Kanäle anpassen.</p>
+                  <cite style={{ fontSize: "0.75rem", color: "var(--text-gray)", fontStyle: "normal" }}>Quelle: BFSG (Barrierefreiheitsstärkungsgesetz)</cite>
+                </div>
+              </div>
             </div>
-            <div className="branche-challenges-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
-              <div className="branche-challenge-card" style={{ borderTop: "3px solid var(--accent)" }}>
-                <span className="branche-hero-stat-val" style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", display: "block", marginBottom: "0.5rem" }}>63 %</span>
-                <h3 style={{ marginBottom: "0.5rem" }}>Anfragen außerhalb der Öffnungszeiten</h3>
-                <p style={{ marginBottom: "0.75rem" }}>Über die Hälfte aller Kundenanfragen gehen außerhalb Ihrer Geschäftszeiten ein — und bleiben ohne KI unbeantwortet.</p>
-                <cite style={{ fontSize: "0.75rem", color: "var(--text-gray)", fontStyle: "normal" }}>Quelle: Bitkom 2023</cite>
-              </div>
-              <div className="branche-challenge-card" style={{ borderTop: "3px solid var(--accent)" }}>
-                <span className="branche-hero-stat-val" style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", display: "block", marginBottom: "0.5rem" }}>3,5 h</span>
-                <h3 style={{ marginBottom: "0.5rem" }}>Verlust pro Woche durch Telefonbearbeitung</h3>
-                <p style={{ marginBottom: "0.75rem" }}>Handwerksbetriebe verlieren im Schnitt 3,5 Stunden pro Woche allein durch das Entgegennehmen, Weiterleiten und Nachbearbeiten von Telefonanrufen.</p>
-                <cite style={{ fontSize: "0.75rem", color: "var(--text-gray)", fontStyle: "normal" }}>Schätzung auf Basis branchenüblicher Benchmarks</cite>
-              </div>
-              <div className="branche-challenge-card" style={{ borderTop: "3px solid var(--accent)" }}>
-                <span className="branche-hero-stat-val" style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", display: "block", marginBottom: "0.5rem" }}>50.000+</span>
-                <h3 style={{ marginBottom: "0.5rem" }}>Betriebe betroffen durch BFSG ab 2025</h3>
-                <p style={{ marginBottom: "0.75rem" }}>Das Barrierefreiheitsstärkungsgesetz (BFSG) tritt ab Juni 2025 in Kraft. Bis zu 50.000 Handwerksbetriebe müssen ihre digitalen Kanäle anpassen.</p>
-                <cite style={{ fontSize: "0.75rem", color: "var(--text-gray)", fontStyle: "normal" }}>Quelle: BFSG (Barrierefreiheitsstärkungsgesetz)</cite>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </FadeInSection>
 
         {/* ── ARBEITSALLTAG OHNE / MIT KI ── */}
         <section className="branche-section">

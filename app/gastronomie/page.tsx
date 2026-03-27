@@ -9,6 +9,10 @@ import { getBrancheBySlug, BRANCHEN } from "@/lib/branchen";
 import LiveDemoWidget from "@/components/LiveDemoWidget";
 import AnimatedStat from "@/components/ui/AnimatedStat";
 import FadeInSection from "@/components/ui/FadeInSection";
+import ScrollQuote from "@/components/ScrollQuote";
+import StaggerGrid from "@/components/StaggerGrid";
+import { staggerItemVariants } from "@/components/StaggerGrid";
+import ParallaxHero from "@/components/ParallaxHero";
 import { motion } from "framer-motion";
 
 const b = getBrancheBySlug("gastronomie")!;
@@ -17,7 +21,7 @@ const challengeContainerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.12,
     },
   },
 };
@@ -38,8 +42,9 @@ export default function GastronomiePage() {
       <main>
 
         {/* ── HERO ── */}
-        <section className="branche-hero" style={{ paddingBottom: "4rem" }}>
-          <div className="container">
+        <section className="branche-hero" style={{ paddingBottom: "4rem", position: "relative" }}>
+          <ParallaxHero />
+          <div className="container" style={{ position: "relative", zIndex: 1 }}>
             <nav className="branche-breadcrumb" aria-label="Breadcrumb">
               <Link href="/">Startseite</Link>
               <span>›</span>
@@ -119,6 +124,12 @@ export default function GastronomiePage() {
           </section>
         </FadeInSection>
 
+        {/* ── SCROLL QUOTE ── */}
+        <ScrollQuote
+          quote={b.caseStudy.zitat}
+          author={b.caseStudy.firma}
+        />
+
         {/* ── LÖSUNGEN ── */}
         <FadeInSection>
           <section id="loesungen" className="branche-section">
@@ -127,11 +138,12 @@ export default function GastronomiePage() {
                 <span className="section-eyebrow">KI-Lösungen</span>
                 <h2 className="section-heading section-heading-center">Was wir für Ihre Gastronomie tun</h2>
               </div>
-              <div className="branche-solutions-grid">
+              <StaggerGrid className="branche-solutions-grid">
                 {b.loesungen.map((l, i) => (
                   <motion.div
                     key={i}
-                    className="branche-solution-card transition-shadow hover:shadow-[0_8px_24px_rgba(250,239,112,0.15)]"
+                    className="branche-solution-card"
+                    variants={staggerItemVariants}
                     whileHover={{ y: -4 }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
                   >
@@ -144,7 +156,7 @@ export default function GastronomiePage() {
                     </div>
                   </motion.div>
                 ))}
-              </div>
+              </StaggerGrid>
             </div>
           </section>
         </FadeInSection>

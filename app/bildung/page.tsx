@@ -5,6 +5,12 @@ import Footer from "@/components/Footer";
 import { cities } from "./[stadt]/cityData";
 import { getBrancheBySlug, BRANCHEN } from "@/lib/branchen";
 import LiveDemoWidget from "@/components/LiveDemoWidget";
+import AnimatedStat from "@/components/ui/AnimatedStat";
+import FadeInSection from "@/components/ui/FadeInSection";
+import ScrollQuote from "@/components/ScrollQuote";
+import ChallengeGrid from "@/components/ChallengeGrid";
+import SolutionGrid from "@/components/SolutionGrid";
+import ParallaxHero from "@/components/ParallaxHero";
 
 export const metadata: Metadata = {
   title: "KI Beratung für Bildungseinrichtungen | kiberatung.de",
@@ -76,8 +82,9 @@ export default function BildungPage() {
       <main>
 
         {/* ── HERO ── */}
-        <section className="branche-hero" style={{ paddingBottom: "4rem" }}>
-          <div className="container">
+        <section className="branche-hero" style={{ paddingBottom: "4rem", position: "relative" }}>
+          <ParallaxHero />
+          <div className="container" style={{ position: "relative", zIndex: 1 }}>
             <nav className="branche-breadcrumb" aria-label="Breadcrumb">
               <Link href="/">Startseite</Link>
               <span>›</span>
@@ -101,20 +108,11 @@ export default function BildungPage() {
 
             {/* Hero stats */}
             <div className="branche-hero-stats">
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">24/7</span>
-                <span className="branche-hero-stat-lbl">Kursbuchungen automatisch</span>
-              </div>
+              <AnimatedStat value="24/7" label="Kursbuchungen automatisch" />
               <div className="branche-hero-stat-divider" />
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">−80%</span>
-                <span className="branche-hero-stat-lbl">Routineanfragen manuell</span>
-              </div>
+              <AnimatedStat value="−80%" label="Routineanfragen manuell" />
               <div className="branche-hero-stat-divider" />
-              <div className="branche-hero-stat">
-                <span className="branche-hero-stat-val">+40%</span>
-                <span className="branche-hero-stat-lbl">Prüfungserfolg mit KI-Begleitung</span>
-              </div>
+              <AnimatedStat value="+40%" label="Prüfungserfolg mit KI-Begleitung" />
             </div>
 
             <div className="branche-actions" style={{ marginTop: "2rem" }}>
@@ -125,46 +123,36 @@ export default function BildungPage() {
         </section>
 
         {/* ── HERAUSFORDERUNGEN ── */}
-        <section className="branche-section branche-challenges-bg">
+        <FadeInSection>
+          <section className="branche-section branche-challenges-bg">
           <div className="container">
             <div className="branche-section-head">
               <span className="section-eyebrow">Herausforderungen</span>
               <h2 className="section-heading section-heading-center">Was hält Bildungseinrichtungen zurück?</h2>
             </div>
-            <div className="branche-challenges-grid">
-              {b.challenges.map((c, i) => (
-                <div key={i} className="branche-challenge-card">
-                  <span className="branche-num">0{i + 1}</span>
-                  <h3>{c.title}</h3>
-                  <p>{c.desc}</p>
-                </div>
-              ))}
-            </div>
+              <ChallengeGrid challenges={b.challenges} />
           </div>
         </section>
+        </FadeInSection>
+
+        {/* ── SCROLL QUOTE ── */}
+        <ScrollQuote
+          quote={b.caseStudy.zitat}
+          author={b.caseStudy.firma}
+        />
 
         {/* ── LÖSUNGEN ── */}
-        <section id="loesungen" className="branche-section">
+        <FadeInSection>
+          <section id="loesungen" className="branche-section">
           <div className="container">
             <div className="branche-section-head">
               <span className="section-eyebrow">KI-Lösungen</span>
               <h2 className="section-heading section-heading-center">Was wir für Ihre Bildungseinrichtung tun</h2>
             </div>
-            <div className="branche-solutions-grid">
-              {b.loesungen.map((l, i) => (
-                <div key={i} className="branche-solution-card">
-                  <div className="branche-sol-icon" dangerouslySetInnerHTML={{ __html: l.icon }} />
-                  <h3 className="branche-sol-title">{l.title}</h3>
-                  <p className="branche-sol-desc">{l.desc}</p>
-                  <div className="branche-sol-stat">
-                    <span className="branche-sol-val">{l.stat}</span>
-                    <span className="branche-sol-lbl">{l.statLabel}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+              <SolutionGrid loesungen={b.loesungen} />
           </div>
         </section>
+        </FadeInSection>
 
         {/* ── LIVE DEMO ── */}
         <LiveDemoWidget branche="bildung" />

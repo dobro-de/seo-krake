@@ -1,5 +1,21 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+const bentoContainerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+};
+
+const bentoItemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  },
+};
+
 /* ---- Animated Visual: KI Roadmap (for KI-Strategie card) ---- */
 const StrategieVisual = () => (
   <div className="card-visual ki-strategy-visual">
@@ -178,47 +194,53 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="bento-grid">
+        <motion.div
+          className="bento-grid"
+          variants={bentoContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {/* Row 1: span-2 + span-1 */}
-          <div className="bento-card bento-card-large fade-up">
+          <motion.div className="bento-card bento-card-large" variants={bentoItemVariants}>
             <div className="bento-icon" aria-hidden="true">{features[0].svg}</div>
             <h3>{features[0].title}</h3>
             <p>{features[0].description}</p>
             {features[0].visual}
             <div className="bento-glow" aria-hidden="true" />
-          </div>
-          <div className="bento-card fade-up animate-delay-1">
+          </motion.div>
+          <motion.div className="bento-card" variants={bentoItemVariants}>
             <div className="bento-icon" aria-hidden="true">{features[1].svg}</div>
             <h3>{features[1].title}</h3>
             <p>{features[1].description}</p>
-          </div>
+          </motion.div>
 
           {/* Row 2: span-1 + span-2 */}
-          <div className="bento-card fade-up animate-delay-2">
+          <motion.div className="bento-card" variants={bentoItemVariants}>
             <div className="bento-icon" aria-hidden="true">{features[2].svg}</div>
             <h3>{features[2].title}</h3>
             <p>{features[2].description}</p>
-          </div>
-          <div className="bento-card bento-card-large fade-up animate-delay-3">
+          </motion.div>
+          <motion.div className="bento-card bento-card-large" variants={bentoItemVariants}>
             <div className="bento-icon" aria-hidden="true">{features[3].svg}</div>
             <h3>{features[3].title}</h3>
             <p>{features[3].description}</p>
             {features[3].visual}
             <div className="bento-glow" aria-hidden="true" />
-          </div>
+          </motion.div>
 
           {/* Row 3: span-1 + span-1 */}
-          <div className="bento-card fade-up animate-delay-4">
+          <motion.div className="bento-card" variants={bentoItemVariants}>
             <div className="bento-icon" aria-hidden="true">{features[4].svg}</div>
             <h3>{features[4].title}</h3>
             <p>{features[4].description}</p>
-          </div>
-          <div className="bento-card fade-up animate-delay-5">
+          </motion.div>
+          <motion.div className="bento-card" variants={bentoItemVariants}>
             <div className="bento-icon" aria-hidden="true">{features[5].svg}</div>
             <h3>{features[5].title}</h3>
             <p>{features[5].description}</p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
