@@ -20,7 +20,7 @@ export default function CTASection({ city }: Props) {
         </div>
 
         <h2 className="section-heading section-heading-center" style={{ marginBottom: "20px" }}>
-          Bereit, Ihre Gastronomie in {city.name} mit KI zu transformieren?
+          Bereit, Ihren Handwerksbetrieb in {city.name} mit KI zu transformieren?
         </h2>
 
         <p

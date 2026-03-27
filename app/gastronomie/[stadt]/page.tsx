@@ -94,7 +94,7 @@ export default async function GastronomieStadtPage({
     cta: <CTASection key="cta" city={city} />,
   };
 
-  const order: (keyof typeof sections)[] = ["hero", "stats", "problems", "features", "caseStudy", "faq", "cta"];
+  const order: (keyof typeof sections)[] = ["hero", "problems", "features", "caseStudy", "faq", "cta"];
 
   const idx = cities.findIndex((c) => c.slug === city.slug);
   const relatedCities = [

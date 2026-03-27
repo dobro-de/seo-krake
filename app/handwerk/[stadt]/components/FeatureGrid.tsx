@@ -6,40 +6,40 @@ interface Props {
 
 const features = [
   {
+    svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>,
+    title: "Angebots-KI",
+    desc: "Automatische Kalkulation und Angebotserstellung auf Knopfdruck — mit Materialpreisen, Arbeitszeiten und Gewinnmarge in Sekundenschnelle.",
+    highlight: "bis zu 70 % schnellere Angebote",
+  },
+  {
     svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>,
-    title: "KI-Reservierungsmanagement",
-    desc: "Automatische Tischoptimierung, No-Show-Prognosen und personalisierte Gästekommunikation — rund um die Uhr.",
-    highlight: "bis zu 65 % weniger No-Shows",
-  },
-  {
-    svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4"/><circle cx="9" cy="19" r="1"/><circle cx="17" cy="19" r="1"/></svg>,
-    title: "Intelligente Einkaufsplanung",
-    desc: "KI berechnet den exakten Warenbedarf auf Basis von Buchungen, Wetter und Events — und sendet automatische Bestellungen.",
-    highlight: "bis zu 34 % weniger Lebensmittelabfall",
-  },
-  {
-    svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
-    title: "KI-Personalplanung",
-    desc: "Umsatzprognose-gekoppelte Schichtplanung eliminiert Über- und Unterbesetzung — mit fairer Mitarbeiterrotation.",
-    highlight: "bis zu 22 % Personalkostensenkung",
+    title: "KI-Terminplanung",
+    desc: "Intelligente Tourenoptimierung, Baustellenkoordination und automatische Erinnerungen für Kunden — kein Doppelbuchungs-Chaos mehr.",
+    highlight: "bis zu 40 % weniger Ausfallzeiten",
   },
   {
     svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>,
-    title: "KI-Gäste-Assistent",
-    desc: "Mehrsprachiger Chatbot für Reservierungen, Speisekarten-Fragen und Allergenkommunikation — 24/7 ohne Personalaufwand.",
-    highlight: "24/7 verfügbar, 30+ Sprachen",
+    title: "WhatsApp-Kundenbot",
+    desc: "24/7 automatische Beantwortung von Kundenanfragen, Terminbestätigungen und Statusupdates direkt über WhatsApp — ohne Personalaufwand.",
+    highlight: "24/7 erreichbar, kein Aufwand",
+  },
+  {
+    svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><rect x="9" y="1" width="6" height="4" rx="1" ry="1"/><path d="M9 12h6M9 16h4"/></svg>,
+    title: "Aufmaß-Automatisierung",
+    desc: "Digitale Aufmaßerfassung per App mit automatischer Übernahme in Angebot und Rechnung — schluss mit Übertragungsfehlern.",
+    highlight: "keine manuellen Übertragungsfehler",
   },
   {
     svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M12 17V5M6 17v-3"/></svg>,
-    title: "Echtzeit-Analytics",
-    desc: "Live-Dashboards für Umsatz, Foodcost, Tischdurchsatz und Gästebewertungen — mit KI-gestützten Handlungsempfehlungen.",
-    highlight: "datengesteuerte Entscheidungen",
+    title: "Echtzeit-Kalkulation",
+    desc: "Live-Dashboards für Projektkosten, Materialverbrauch und Stundennachweise — mit automatischen Abweichungswarnungen und ROI-Tracking.",
+    highlight: "volle Kostentransparenz",
   },
   {
-    svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>,
-    title: "Dynamische Preisgestaltung",
-    desc: "KI-Revenue-Management passt Preise in Echtzeit an Auslastung, Wettbewerb und Nachfrage an — wie in der Hotellerie.",
-    highlight: "bis zu 18 % mehr Umsatz pro Tisch",
+    svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
+    title: "Fuhrpark-Management",
+    desc: "KI-gestützte Fahrzeugeinsatzplanung, Wartungsintervall-Tracking und Routenoptimierung — senkt Fahrtkosten und verlängert Fahrzeuglebensdauer.",
+    highlight: "bis zu 25 % weniger Fahrtkosten",
   },
 ];
 
@@ -52,11 +52,11 @@ export default function FeatureGrid({ city }: Props) {
             Unsere KI-Lösungen für {city.name}
           </div>
           <h2 className="section-heading section-heading-center">
-            KI-Tools, die Ihre Gastronomie in {city.name} transformieren
+            KI-Tools, die Ihren Handwerksbetrieb in {city.name} transformieren
           </h2>
           <p className="section-sub section-sub-center">
             Maßgeschneiderte KI-Lösungen für die spezifischen Anforderungen des {city.name}er
-            Gastronomiemarkts.
+            Handwerksmarkts.
           </p>
         </div>
 

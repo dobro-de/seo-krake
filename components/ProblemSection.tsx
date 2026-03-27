@@ -27,7 +27,6 @@ export default function ProblemSection() {
       <div className="container">
         <div style={{ textAlign: "center" }}>
           <span className="section-eyebrow">Das Problem</span>
-          <div className="problem-stat" aria-label="73 Prozent der KI-Projekte scheitern">73%</div>
           <h2 id="problem-heading" className="section-heading section-heading-center">
             Warum scheitern 73% der KI-Projekte?
           </h2>

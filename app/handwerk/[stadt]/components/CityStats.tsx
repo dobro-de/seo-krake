@@ -36,7 +36,7 @@ export default function CityStats({ city }: Props) {
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
           <div className="section-eyebrow" style={{ display: "inline-flex", marginBottom: "16px" }}>
-            Gastronomie in {name}
+            Handwerk in {name}
           </div>
           <h2 className="section-heading section-heading-center">
             Der Markt in {name} — Zahlen &amp; Fakten

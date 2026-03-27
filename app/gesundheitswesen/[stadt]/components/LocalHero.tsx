@@ -54,7 +54,7 @@ export default function LocalHero({ city }: Props) {
               display: "inline-block",
             }}
           />
-          KI Beratung · Gastronomie · {city.name}
+          KI Beratung · Gesundheitswesen · {city.name}
         </div>
 
         {/* H1 */}
@@ -92,6 +92,7 @@ export default function LocalHero({ city }: Props) {
             justifyContent: "center",
             gap: "16px",
             flexWrap: "wrap",
+            marginBottom: "48px",
           }}
         >
           <a href="#kontakt" className="btn-primary">
@@ -100,6 +101,62 @@ export default function LocalHero({ city }: Props) {
           <a href="#case-study" className="btn-ghost">
             Fallstudie ansehen
           </a>
+        </div>
+
+        {/* Compact Stats Bar */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "0",
+            flexWrap: "wrap",
+            background: "var(--bg-card)",
+            border: "1px solid var(--border-subtle)",
+            borderRadius: "var(--radius-card)",
+            padding: "20px 32px",
+          }}
+        >
+          {[
+            { value: city.stats.betriebe, label: city.stats.label1 },
+            { value: city.stats.mitarbeiter, label: city.stats.label2 },
+            { value: city.stats.markttrend, label: city.stats.label3 },
+          ].map((s, i) => (
+            <div
+              key={i}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "4px",
+                flex: "1 1 120px",
+                padding: "8px 16px",
+                borderRight: i < 2 ? "1px solid var(--border-subtle)" : "none",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "clamp(22px, 3vw, 32px)",
+                  fontWeight: 900,
+                  color: "var(--accent)",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1,
+                }}
+              >
+                {s.value}
+              </span>
+              <span
+                style={{
+                  fontSize: "12px",
+                  color: "var(--text-gray)",
+                  lineHeight: 1.4,
+                  textAlign: "center",
+                }}
+              >
+                {s.label}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
