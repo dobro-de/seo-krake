@@ -3,6 +3,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { cities } from "./[stadt]/cityData";
+import { variantenMap, VARIANTEN_SLUGS } from "./[stadt]/variantenData";
 import { getBrancheBySlug, BRANCHEN } from "@/lib/branchen";
 import LiveDemoWidget from "@/components/LiveDemoWidget";
 
@@ -206,6 +207,32 @@ export default function LogistikPage() {
               <a href="mailto:info@kiberatung.de" className="btn-accent btn-accent-lg">
                 Jetzt kostenloses Gespräch buchen →
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── VARIANTEN ── */}
+        <section className="branche-section">
+          <div className="container">
+            <div className="branche-section-head">
+              <span className="section-eyebrow">Spezialisierung</span>
+              <h2 className="section-heading section-heading-center">
+                KI Beratung nach Logistik-Segment
+              </h2>
+              <p className="section-sub section-sub-center" style={{ maxWidth: 560, margin: "0.75rem auto 0" }}>
+                Jedes Segment hat eigene Herausforderungen — und eigene KI-Lösungen.
+              </p>
+            </div>
+            <div className="gastro-cities-grid">
+              {VARIANTEN_SLUGS.map((slug) => {
+                const v = variantenMap[slug];
+                return (
+                  <Link key={slug} href={`/logistik/${slug}`} className="gastro-city-card">
+                    <span className="gastro-city-name">{v.name}</span>
+                    <span className="gastro-city-stat">{v.stats.betriebe} Betriebe</span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
