@@ -387,23 +387,28 @@ body {
   100% { transform: translateX(-50%); }
 }
 
-.logo-placeholder {
+.trust-bar-track {
+  overflow: hidden;
+}
+.trust-bar-scroll {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.4;
-  transition: opacity 0.2s ease;
-  min-width: 120px;
-  height: 36px;
+  gap: 48px;
+  animation: marquee-scroll 20s linear infinite;
+  width: max-content;
 }
-
-.logo-placeholder:hover {
-  opacity: 0.7;
+.trust-bar-scroll:hover {
+  animation-play-state: paused;
 }
-
-.logo-placeholder svg {
-  height: 28px;
-  fill: var(--text-gray);
+.trust-bar-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.trust-bar-name:hover {
+  color: rgba(255,255,255,0.6);
 }
 
 /* =========================================

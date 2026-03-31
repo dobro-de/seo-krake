@@ -48,10 +48,10 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Unternehmen</h4>
             <ul>
-              <li><a href="#problem">Über uns</a></li>
-              <li><a href="#prozess">Unser Prozess</a></li>
-              <li><a href="#referenzen">Referenzen</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><Link href="/ueber-uns">Über uns</Link></li>
+              <li><Link href="/preise">Preise</Link></li>
+              <li><Link href="/#kundenprojekte">Referenzen</Link></li>
+              <li><Link href="/#faq">FAQ</Link></li>
             </ul>
           </div>
 
@@ -60,20 +60,18 @@ export default function Footer() {
             <h4>Kontakt</h4>
             <ul>
               <li><a href="mailto:info@kiberatung.de">info@kiberatung.de</a></li>
-              <li><a href="tel:+4930000000">+49 30 000 000</a></li>
-              <li><a href="#kontakt">Erstberatung buchen</a></li>
+              <li><Link href="/termin-buchen">Kostenlose Erstberatung</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
           <p className="footer-copy">
-            &copy; {year} KI Beratung. Alle Rechte vorbehalten.
+            &copy; {year} Everlast Consulting GmbH. Alle Rechte vorbehalten.
           </p>
           <nav className="footer-links" aria-label="Rechtliche Links">
-            <a href="/datenschutz">Datenschutz</a>
-            <a href="/impressum">Impressum</a>
-            <a href="/agb">AGB</a>
+            <Link href="/datenschutz">Datenschutz</Link>
+            <Link href="/impressum">Impressum</Link>
           </nav>
         </div>
       </div>
