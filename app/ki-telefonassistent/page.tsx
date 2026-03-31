@@ -82,21 +82,36 @@ const USE_CASES = [
     useCase: "Reservierungen",
     desc: "Gäste rufen an und reservieren direkt — die KI trägt den Tisch ein, bestätigt die Uhrzeit und schickt eine Erinnerungs-SMS.",
     href: "/gastronomie",
-    icon: "🍽️",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: 28, height: 28 }}>
+        <path d="M3 11l19-9-9 19-2-8-8-2z" />
+      </svg>
+    ),
   },
   {
     branche: "Arztpraxis",
     useCase: "Terminbuchung",
     desc: "Patienten buchen, verschieben oder stornieren Termine telefonisch — ohne Wartezeit in der Warteschleife.",
     href: "/gesundheitswesen",
-    icon: "🏥",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: 28, height: 28 }}>
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+        <line x1="16" y1="2" x2="16" y2="6" />
+        <line x1="8" y1="2" x2="8" y2="6" />
+        <line x1="3" y1="10" x2="21" y2="10" />
+      </svg>
+    ),
   },
   {
     branche: "Handwerk",
     useCase: "Auftragsannahme",
     desc: "Aufträge werden direkt am Telefon aufgenommen — inklusive Adresse, Art der Arbeit und Wunschtermin.",
     href: "/handwerk",
-    icon: "🔧",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: 28, height: 28 }}>
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+      </svg>
+    ),
   },
 ];
 
@@ -324,7 +339,7 @@ export default function KiTelefonassistentPage() {
                 >
                   <Link href={uc.href} style={{ textDecoration: "none", display: "block", height: "100%" }}>
                     <div className="branche-challenge-card" style={{ height: "100%" }}>
-                      <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>{uc.icon}</div>
+                      <div style={{ color: "var(--accent)", marginBottom: "0.75rem" }}>{uc.icon}</div>
                       <span className="branche-num" style={{ marginBottom: "0.5rem", display: "block" }}>
                         {uc.useCase}
                       </span>
