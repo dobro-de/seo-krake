@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -311,70 +312,104 @@ export default function UeberUnsPage() {
                 </div>
               </div>
 
-              {/* Vacant — KI-Entwicklung */}
+              {/* Leo — KI-Entwicklung */}
               <div
                 style={{
                   background: CARD_BG,
-                  border: `1px dashed ${BORDER}`,
+                  border: `1px solid ${BORDER}`,
                   borderRadius: "16px",
                   padding: "36px 32px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "center",
-                  gap: "16px",
+                  position: "relative",
+                  overflow: "hidden",
                 }}
               >
                 <div
                   style={{
-                    width: "80px",
-                    height: "80px",
-                    borderRadius: "50%",
-                    background: "rgba(255,255,255,0.04)",
-                    border: `2px dashed ${BORDER}`,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: SUBTEXT,
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "2px",
+                    background: `linear-gradient(90deg, transparent, ${ACCENT}, transparent)`,
+                  }}
+                />
+                <div style={{ marginBottom: "20px" }}>
+                  <Image
+                    src="/images/team/leo.jpg"
+                    alt="Leo — KI-Entwicklung bei Everlast Consulting"
+                    width={80}
+                    height={80}
+                    style={{ borderRadius: "50%", objectFit: "cover", border: `2px solid rgba(250,239,112,0.3)` }}
+                  />
+                </div>
+                <div
+                  style={{
+                    display: "inline-block",
+                    background: "rgba(250,239,112,0.12)",
+                    border: "1px solid rgba(250,239,112,0.25)",
+                    borderRadius: "999px",
+                    padding: "3px 12px",
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    color: ACCENT,
+                    marginBottom: "12px",
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase",
                   }}
                 >
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
+                  KI-Entwicklung
                 </div>
+                <h3
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: 700,
+                    color: "#ffffff",
+                    marginBottom: "12px",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  Leo
+                </h3>
+                <p
+                  style={{
+                    fontSize: "15px",
+                    color: SUBTEXT,
+                    lineHeight: 1.65,
+                    marginBottom: "24px",
+                  }}
+                >
+                  &ldquo;Gute KI ist die, die niemand bemerkt — weil sie einfach funktioniert.&rdquo;
+                </p>
                 <div>
-                  <span
+                  <p
                     style={{
-                      display: "inline-block",
-                      background: "rgba(255,255,255,0.06)",
-                      border: `1px solid ${BORDER}`,
-                      borderRadius: "999px",
-                      padding: "3px 12px",
                       fontSize: "12px",
                       fontWeight: 600,
-                      color: SUBTEXT,
-                      marginBottom: "12px",
-                      letterSpacing: "0.05em",
+                      letterSpacing: "0.06em",
                       textTransform: "uppercase",
-                    }}
-                  >
-                    KI-Entwicklung
-                  </span>
-                  <h3
-                    style={{
-                      fontSize: "22px",
-                      fontWeight: 700,
-                      color: "#ffffff",
+                      color: SUBTEXT,
                       marginBottom: "10px",
-                      letterSpacing: "-0.02em",
                     }}
                   >
-                    Wir wachsen
-                  </h3>
-                  <p style={{ fontSize: "15px", color: SUBTEXT, lineHeight: 1.65 }}>
-                    Wir suchen talentierte KI-Entwickler, die unsere Vision teilen. Interesse? Melde dich bei uns.
+                    Experte in:
                   </p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                    {["KI-Entwicklung", "Voice Agents", "Automatisierung"].map((tag) => (
+                      <span
+                        key={tag}
+                        style={{
+                          background: "rgba(255,255,255,0.06)",
+                          border: `1px solid ${BORDER}`,
+                          borderRadius: "999px",
+                          padding: "4px 12px",
+                          fontSize: "13px",
+                          color: "#ffffff",
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
