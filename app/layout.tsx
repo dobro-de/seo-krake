@@ -4,6 +4,7 @@ import "./globals.css";
 import CookieNotice from "@/components/CookieNotice";
 import AmbientOrbs from "@/components/AmbientOrbs";
 import AnimatedGrid from "@/components/AnimatedGrid";
+import UTMTracker from "@/components/UTMTracker";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${bebasNeue.variable}`}>
         <AnimatedGrid />
         <AmbientOrbs />
+        <UTMTracker />
         {children}
         <CookieNotice />
         <script
