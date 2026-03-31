@@ -8,6 +8,7 @@ import Prozess from "@/components/Prozess";
 import Stats from "@/components/Stats";
 import UseCases from "@/components/UseCases";
 import Branchen from "@/components/Branchen";
+import CustomerProjects from "@/components/CustomerProjects";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -27,6 +28,7 @@ export default function Home() {
         <Stats />
         <UseCases />
         <Branchen />
+        <CustomerProjects />
         <FAQ />
         <FinalCTA />
       </main>
